@@ -9,7 +9,7 @@ Prof Requirements:
 Project requirements:
 * Has description
 * Program restrictions
-* # of students required (can’t go over limit)
+* no. of students required (can’t go over limit)
 
 Student requirements:
 * Look up projects
