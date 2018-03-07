@@ -11,7 +11,7 @@ Project requirements:
 * Program restrictions
 * no. of students required (can’t go over limit)
 
-Student requirements:
+Student_ requirements:
 * Look up projects
 * Apply for projects
 
@@ -22,7 +22,7 @@ Project coordinator:
 
 Oral Presentation: 
 * Prof enters availability
-* Student enters availability
+* Student_ enters availability
 * Coordinator allocates presentation rooms based on availability (manually or algorithm based)
 
 Final presentation:
