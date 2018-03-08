@@ -90,7 +90,6 @@ class Project  extends React.Component {
     constructor(props) {
         super(props);
         this.handleClick = this.handleClick.bind(this);
-
     }
 
     handleClick(event){
@@ -143,6 +142,10 @@ var PROJECTS = [ {name: 'Joe Biden', age: 45, years: 5, years: 5},      //dummy 
 
 class ProjectForm extends React.Component {     //structure of the form
 
+    constructor(props) {
+        super(props);
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
 
     handleSubmit(event) {           //grabs values from the form and creates variables
         event.preventDefault();
@@ -215,7 +218,7 @@ class ProjectForm extends React.Component {     //structure of the form
                     <div>
                         <fieldset id="checkArray">
                             <b>SE </b><input type="checkbox" name="programs[]" value="SE" /><br></br>
-                            <b>SE </b><input type="checkbox" name="programs[]" value="EE" /><br></br>
+                            <b>EE </b><input type="checkbox" name="programs[]" value="EE" /><br></br>
                             <b>Communications </b><input type="checkbox" name="programs[]" value="Communications" /><br></br>
                             <b>CSE </b><input type="checkbox" name="programs[]" value="CSE" /><br></br>
                             <b>Biomed </b><input type="checkbox" name="programs[]" value="Biomed" /><br></br>
