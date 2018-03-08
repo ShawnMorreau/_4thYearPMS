@@ -3,6 +3,7 @@ package sysc4806;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+import javax.persistence.Column;
 import javax.persistence.Id;
 
 /**
@@ -12,35 +13,36 @@ import javax.persistence.Id;
 public class Student {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
+    @Column(name = "studentId")
     private Double studentId;
 
-    private ProjectRepo project_repo;
+    //private ProjectRepo project_repo;
 
 
-    private Project currentProject = new Project();
+    /*private Project currentProject = new Project();
     public Student(Double studentId, ProjectRepo project_repo) {
         this.project_repo = project_repo;
         this.studentId = studentId;
         project_repo.addStudent_(this);
-    }
+    }*/
 
     public Student(Double id) {
         this.studentId = id;
     }
 
-    public void chooseProject(Project prospectiveProject){
+    /*public void chooseProject(Project prospectiveProject){
         currentProject = prospectiveProject;
-    }
+    }*/
 
-    public Project getCurrentProject() {
+    /*public Project getCurrentProject() {
         return currentProject;
     }
-
+*/
     public Double getStudentId() {
         return studentId;
     }
 
-    public void setName(Double studentId) {
+    public void setStudentId(Double studentId) {
         this.studentId = studentId;
     }
 }

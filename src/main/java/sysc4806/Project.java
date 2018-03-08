@@ -1,11 +1,14 @@
+/*
 package sysc4806;
 
 import java.util.ArrayList;
 import java.util.List;
 
+*/
 /**
  * Created by CraigBook on 2018-03-06.
- */
+ *//*
+
 public class Project {
     private String description;
     private List<String> programs;
@@ -26,3 +29,4 @@ public class Project {
         return (description != "" && programs.size()!=0 && studentLimit!=0);
     }
 }
+*/

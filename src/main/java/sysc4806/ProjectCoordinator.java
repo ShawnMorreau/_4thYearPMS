@@ -1,10 +1,13 @@
+/*
 package sysc4806;
 
 import java.util.List;
 
+*/
 /**
  * Created by CraigBook on 2018-03-06.
- */
+ *//*
+
 public class ProjectCoordinator {
     public List<Student> projectlessStudents;
     public ProjectRepo project_repo;
@@ -22,6 +25,7 @@ public class ProjectCoordinator {
     }
 
     public void notifyStudents(String message) {
-        
+
     }
 }
+*/
