@@ -90,14 +90,36 @@ class Project  extends React.Component {
     constructor(props) {
         super(props);
         this.handleClick = this.handleClick.bind(this);
-
     }
 
     handleClick(event){
 
+        this.deleteProject(this.props.project.id)
+            .then((result)=>this.forceUpdate());
         console.log(event);
         console.log(this.props.project.id);
     }
+
+    deleteProject(id) {
+        let project = new Promise((resolve, reject) => {
+            const url = `http://localhost:8080/project/deleteById?id=${id}`;
+
+            axios.get(url)
+                .then(function (response) {
+                    console.log("Something");
+                    console.log(response.data);
+                    resolve(response.data);
+                })
+                .catch(function (error) {
+                    console.log("NotGood");
+                    console.log(error);
+                    reject(error);
+                });
+        });
+
+        return project;
+    }
+
     render() {
         //runQuery('Select * from project');
         return(
@@ -120,6 +142,10 @@ var PROJECTS = [ {name: 'Joe Biden', age: 45, years: 5, years: 5},      //dummy 
 
 class ProjectForm extends React.Component {     //structure of the form
 
+    constructor(props) {
+        super(props);
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
 
     handleSubmit(event) {           //grabs values from the form and creates variables
         event.preventDefault();
@@ -127,20 +153,46 @@ class ProjectForm extends React.Component {     //structure of the form
 
         var title = document.getElementById('pTitle').value;
         var description = document.getElementById('pDescription').value;
-        var restrictedTo = target.type === 'checkbox' ? target.checked :[
-            document.getElementById('SE').value,
-            document.getElementById('EE').value,
-            document.getElementById('Communications').value,
-            document.getElementById('CSE').value,
-            document.getElementById('Biomed').value,
-            document.getElementById('Mechanical').value,
-            document.getElementById('Aerospace').value,
-        ];
+ /*       var restrictedTo = target.type === 'checkbox' ? target.checked :[
+            document.getElementById('SE').checked,
+            document.getElementById('EE').checked,
+            document.getElementById('Communications').checked,
+            document.getElementById('CSE').checked,
+            document.getElementById('Biomed').checked,
+            document.getElementById('Mechanical').checked,
+            document.getElementById('Aerospace').checked,
+        ];*/
         var maxAllowed = document.getElementById('pMaxAllowed').value;
+        var p = [];
+        var checks = document.getElementsByName("programs[]");
+        for (var i=0; i < checks.length; i++) {
+            if(checks[i].checked){
+                p.push(checks[i].value);
+            }
+        }
+        var programs = p.join();
+        this.addProject(title, description, programs, maxAllowed).then((result)=>this.forceUpdate());
 
+    }
 
+    addProject(title, description, programs, maxStudents) {
+        let project = new Promise((resolve, reject) => {
+            const url = `http://localhost:8080/project/add?title=${title}&description=${description}&programs=${programs}&maxStudents=${maxStudents}&`;
 
-        //connect with database here
+            axios.get(url)
+                .then(function (response) {
+                    console.log("Something");
+                    console.log(response.data);
+                    resolve(response.data);
+                })
+                .catch(function (error) {
+                    console.log("NotGood");
+                    console.log(error);
+                    reject(error);
+                });
+        });
+
+        return project;
     }
 
     render() {
@@ -154,7 +206,7 @@ class ProjectForm extends React.Component {     //structure of the form
                                                           placeholder="Description..."/><br></br>
 
                     <label>Restricted to: </label>
-                    <div>
+                    {/*<div>
                         <label>SE <input id='SE' type="checkbox"/></label><br></br>
                         <label>EE <input id='EE' type="checkbox"/></label><br></br>
                         <label>Communications <input id='Communications' type="checkbox"/></label><br></br>
@@ -162,6 +214,17 @@ class ProjectForm extends React.Component {     //structure of the form
                         <label>Biomed <input id='Biomed' type="checkbox"/></label><br></br>
                         <label>Mechanical <input id='Mechanical' type="checkbox"/></label><br></br>
                         <label>Aerospace <input id='Aerospace' type="checkbox"/></label><br></br>
+                    </div>*/}
+                    <div>
+                        <fieldset id="checkArray">
+                            <b>SE </b><input type="checkbox" name="programs[]" value="SE" /><br></br>
+                            <b>EE </b><input type="checkbox" name="programs[]" value="EE" /><br></br>
+                            <b>Communications </b><input type="checkbox" name="programs[]" value="Communications" /><br></br>
+                            <b>CSE </b><input type="checkbox" name="programs[]" value="CSE" /><br></br>
+                            <b>Biomed </b><input type="checkbox" name="programs[]" value="Biomed" /><br></br>
+                            <b>Mechanical </b><input type="checkbox" name="programs[]" value="Mechanical" /><br></br>
+                            <b>Aerospace </b><input type="checkbox" name="programs[]" value="Aerospace" /><br></br>
+                        </fieldset>
                     </div>
                     <br></br>
                     <label>Max # of Students: </label><input id='pMaxAllowed' type="number"
