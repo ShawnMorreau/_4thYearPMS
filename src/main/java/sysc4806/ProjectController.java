@@ -31,6 +31,16 @@ public class ProjectController {
         return "Saved project: " + title;
     }
 
+    @CrossOrigin(origins = "http://localhost:3000")
+    @GetMapping(path="/deleteById")
+    public @ResponseBody String deleteProjectById (@RequestParam long id) {
+        // @ResponseBody means the returned String is the response, not a view name
+        // @RequestParam means it is a parameter from the GET or POST request
+
+        projectRepo.deleteById(id);
+        return "Delete: " + id;
+    }
+
     @GetMapping(path="/deleteAll")
     public @ResponseBody String deleteAllProjects () {
         // @ResponseBody means the returned String is the response, not a view name

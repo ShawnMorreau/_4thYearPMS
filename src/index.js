@@ -73,19 +73,11 @@ class ProjectTable  extends React.Component {
                 <table className="table table-striped">
                     <thead>
                     <tr>
-                        <th>Title</th><th>Description</th><th>Programs</th><th>Max allowed</th><th>Remove</th>
+                        <th>Id</th><th>Title</th><th>Description</th><th>Programs</th><th>Max allowed</th><th>Remove</th>
                     </tr>
                     </thead>
                     <tbody>
-                    {this.state.projects.map(p=>
-                        <tr>
-                            <td>{p.title}</td>
-                            <td>{p.description}</td>
-                            <td>{p.programs}</td>
-                            <td>{p.studentLimit}</td>
-                            <td><button onClick={this.handleClick}>X</button></td>
-                        </tr>
-                    )}
+                    {rows}
                     </tbody>
                 </table>
             </div>
@@ -95,19 +87,26 @@ class ProjectTable  extends React.Component {
 
 class Project  extends React.Component {
 
+    constructor(props) {
+        super(props);
+        this.handleClick = this.handleClick.bind(this);
+
+    }
+
     handleClick(event){
 
-        //remove project from table
-
-}
+        console.log(event);
+        console.log(this.props.project.id);
+    }
     render() {
         //runQuery('Select * from project');
         return(
             <tr>
-                <td>{this.props.project.Title}</td>
-                <td>{this.props.project.Description}</td>
-                <td>{this.props.project.Programs}</td>
-                <td>{this.props.project.MaxAllowed}</td>
+                <td>{this.props.project.id}</td>
+                <td>{this.props.project.title}</td>
+                <td>{this.props.project.description}</td>
+                <td>{this.props.project.programs}</td>
+                <td>{this.props.project.studentLimit}</td>
                 <td><button onClick={this.handleClick}>X</button></td>
             </tr>
         );
