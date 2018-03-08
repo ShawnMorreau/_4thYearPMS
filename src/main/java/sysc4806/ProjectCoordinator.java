@@ -1,12 +1,12 @@
-/*
 package sysc4806;
 
 import java.util.List;
 
-*/
-/**
+/*
+*
  * Created by CraigBook on 2018-03-06.
- *//*
+*/
+
 
 public class ProjectCoordinator {
     public List<Student> projectlessStudents;
@@ -18,9 +18,9 @@ public class ProjectCoordinator {
 
     public void checkRogueStudents(){
         for (Student student_: project_repo.getStudent_s()){
-            if(!student_.getCurrentProject().validProject()){
+            /*if(!student_.getCurrentProject().validProject()){
                 projectlessStudents.add(student_);
-            }
+            }*/
         }
     }
 
@@ -28,4 +28,3 @@ public class ProjectCoordinator {
 
     }
 }
-*/
