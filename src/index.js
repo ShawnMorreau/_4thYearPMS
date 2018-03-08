@@ -1,12 +1,71 @@
 import React from 'react';
+import sql from 'mysql';
+import axios from 'axios';
 import { render } from 'react-dom';
 
 
+function runQuery(query){
+    var connection = sql.createConnection({
+        host: 'localhost',
+        user: 'user',
+        password: 'password',
+        database: 'sysc'
+    });
+
+    connection.connect();
+    connection.query(query, function (err, rows, fields) {
+        if (err) throw err
+
+        console.log('The solution is: ', rows[0].solution)
+    });
+    connection.end();
+};
+
 class ProjectTable  extends React.Component {
 
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            projects: []
+        };
+
+        this.fetchProjects = this.fetchProjects.bind(this);
+    }
+
+    componentDidMount() {
+        this.fetchProjects()
+            .then((results)=>this.setState({ projects: results }));
+    }
+
+    fetchProjects() {
+        let projects = new Promise((resolve, reject) => {
+            const url = 'http://localhost:8080/project/all';
+
+            axios.get(url)
+                .then(function (response) {
+                    console.log("Something");
+                    console.log(response.data);
+                    resolve(response.data);
+                })
+                .catch(function (error) {
+                    console.log("NotGood");
+                    console.log(error);
+                    reject(error);
+                });
+        });
+
+        return projects;
+    }
+
     render() {
+        console.log("RENDERING");
+        //runQuery('Select * from project');
+
         var rows = [];
-        this.props.projects.forEach(function(project) {         //pushes to table the row it creates from projects var
+        console.log("PROJECTS");
+        console.log(this.state.projects);
+        this.state.projects.forEach(function(project) {         //pushes to table the row it creates from projects var
             rows.push(<Project project={project} />);
         });
         return (
@@ -17,7 +76,17 @@ class ProjectTable  extends React.Component {
                         <th>Title</th><th>Description</th><th>Programs</th><th>Max allowed</th><th>Remove</th>
                     </tr>
                     </thead>
-                    <tbody>{rows}</tbody>
+                    <tbody>
+                    {this.state.projects.map(p=>
+                        <tr>
+                            <td>{p.title}</td>
+                            <td>{p.description}</td>
+                            <td>{p.programs}</td>
+                            <td>{p.studentLimit}</td>
+                            <td><button onClick={this.handleClick}>X</button></td>
+                        </tr>
+                    )}
+                    </tbody>
                 </table>
             </div>
         );
@@ -32,6 +101,7 @@ class Project  extends React.Component {
 
 }
     render() {
+        //runQuery('Select * from project');
         return(
             <tr>
                 <td>{this.props.project.Title}</td>

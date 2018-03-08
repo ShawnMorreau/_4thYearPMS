@@ -1,7 +1,9 @@
 package sysc4806;
 
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.*;
+import org.springframework.context.annotation.*;
+import org.springframework.web.servlet.config.annotation.*;
 
 @SpringBootApplication
 public class main {
@@ -19,4 +21,5 @@ public class main {
     public static void main(String[] args) {
         SpringApplication.run(main.class, args);
     }
+
 }

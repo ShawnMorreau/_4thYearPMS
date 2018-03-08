@@ -10,8 +10,8 @@ import java.util.List;
 
 public class ProjectCoordinator {
     public List<Student> projectlessStudents;
-    public ProjectRepo project_repo;
-    public ProjectCoordinator(ProjectRepo project_repo){
+    public ProjectRepo_ project_repo;
+    public ProjectCoordinator(ProjectRepo_ project_repo){
         this.project_repo = project_repo;
         checkRogueStudents();
     }

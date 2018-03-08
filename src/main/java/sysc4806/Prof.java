@@ -8,18 +8,18 @@ import java.util.*;
 
 
 public class Prof {
-    ProjectRepo project_repo;
+    ProjectRepo_ project_repo;
     public Prof() {
 
     }
 
-    public Prof(ProjectRepo project_repo) {
+    public Prof(ProjectRepo_ project_repo) {
         this.project_repo = project_repo;
         project_repo.addProf(this);
     }
 
-    public void addProject(String description, String [] programs, int studentLimit) {
-        Project project_ = new Project(description, Arrays.asList(programs), studentLimit);
+    public void addProject(String title, String description, String programs, int studentLimit) {
+        Project project_ = new Project(title, description, programs, studentLimit);
         project_repo.addProject(project_);
     }
 
