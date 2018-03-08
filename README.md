@@ -4,3 +4,12 @@ The project we are building is a web app for a fourth year project management sy
 
 The first feature to be developed will be a table in which posts all projects that it gathers from a database.
 
+Current features in localhost only: fetch from a db and update.
+
+Looking ahead:
+- add authorization
+- change from sql to jpa?
+- add more pages
+
+
+
