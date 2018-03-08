@@ -16,6 +16,7 @@ public class ProjectController {
     @Autowired
     private ProjectRepo projectRepo;
 
+    @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping(path="/add")
     public @ResponseBody String addNewProject (@RequestParam String title, @RequestParam String description, @RequestParam String programs, @RequestParam int maxStudents) {
         // @ResponseBody means the returned String is the response, not a view name
