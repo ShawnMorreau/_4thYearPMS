@@ -1,3 +1,5 @@
+package sysc4806;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -9,7 +11,7 @@ public class main {
         return false;
     }
 
-    /*public static void main (String [] args) {
+    /*public static void sysc4806.main (String [] args) {
         System.out.println("It works");
         //Test commit
     }*/
