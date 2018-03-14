@@ -28,7 +28,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
                     <fork>true</fork>
-                    <mainClass>sysc4806.main</mainClass>
+                    <mainClass>sysc4806.Main</mainClass>
                 </configuration>
                 <executions>
                     <execution>

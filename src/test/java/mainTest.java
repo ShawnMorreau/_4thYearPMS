@@ -1,6 +1,6 @@
 import org.junit.Before;
 import org.junit.Test;
-import sysc4806.main;
+import sysc4806.Main;
 
 import static org.junit.Assert.*;
 
@@ -8,10 +8,10 @@ import static org.junit.Assert.*;
  * Created by CraigBook on 2018-03-06.
  */
 public class mainTest {
-    sysc4806.main main;
+    Main main;
     @Before
     public void setUp() throws Exception {
-        main  = new main();
+        main  = new Main();
     }
     @Test
     public void testReturn0() {
