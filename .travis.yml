@@ -13,10 +13,10 @@ addons:
 dist: trusty
 sudo: required
 before_script:
+  - mysql_upgrade
   - mysql -e 'create database sysc;'
   - mysql -e "create user 'user'@'localhost' identified by 'password';"
   - mysql -e "grant all on sysc.* to 'user'localhost';"
-  - mysql_upgrade
 deploy:
   provider: heroku
   app:
