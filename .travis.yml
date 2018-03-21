@@ -12,7 +12,8 @@ addons:
 dist: trusty
 sudo: required
 before_script:
-  - mysql -e 'create database sysc;'
+  - mysql -e 'create database sysc; create user ‘user’@‘localhost' identified by ‘password’; grant all on sysc.* to ‘user’@‘localhost';'
+#  - mysql -e ''
 deploy:
   provider: heroku
   app:
