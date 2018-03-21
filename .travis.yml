@@ -4,7 +4,7 @@ jdk:
 services:
   - mysql
 before_install:
-  - sudo mysql -e 'CREATE DATABASE IF NOT EXISTS sysc; CREATE USER 'user'@'localhost' IDENTIFIED BY 'password';GRANT ALL ON sysc.* to 'user'@'localhost''
+  - sudo mysql -e 'CREATE DATABASE IF NOT EXISTS sysc; CREATE USER 'user'@'localhost' IDENTIFIED BY 'password';GRANT ALL ON sysc.* to 'user'@'localhost';'
   - sudo mysql_upgrade
   - sudo service mysql restart
 deploy:
