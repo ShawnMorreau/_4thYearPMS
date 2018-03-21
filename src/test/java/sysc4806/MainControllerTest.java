@@ -23,7 +23,6 @@ public class MainControllerTest {
         String message = "Welcome to Project Management System";
         String body = this.testRestTemplate.getForObject("/", String.class);
         assertThat(body).isEqualTo(message);
-//        this.webTestClient.get().uri("/").exchange().expectStatus().isOk().expectBody(String.class).isEqualTo(message);
     }
 
 }
