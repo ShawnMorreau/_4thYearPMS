@@ -1,5 +1,9 @@
 package sysc4806;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.util.List;
 
 /*
@@ -7,24 +11,32 @@ import java.util.List;
  * Created by CraigBook on 2018-03-06.
 */
 
-
+@Entity
 public class ProjectCoordinator {
-    public List<Student> projectlessStudents;
-    public ProjectRepo_ project_repo;
-    public ProjectCoordinator(ProjectRepo_ project_repo){
-        this.project_repo = project_repo;
-        checkRogueStudents();
+    @Id
+    @GeneratedValue(strategy= GenerationType.AUTO)
+    private Integer pcId;
+    private String name;
+
+//    public List<Student> projectlessStudents;
+
+    public ProjectCoordinator(){
+
     }
 
     public void checkRogueStudents(){
-        for (Student student_: project_repo.getStudent_s()){
-            /*if(!student_.getCurrentProject().validProject()){
-                projectlessStudents.add(student_);
-            }*/
-        }
+
     }
 
     public void notifyStudents(String message) {
 
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }

@@ -12,11 +12,11 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.*;
 
 /**
- * Created by CraigBook on 2018-03-20.
+ * Created by CraigBook on 2018-03-21.
  */
 //@RunWith(SpringRunner.class)
 //@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-public class ProjectControllerTest {
+public class ProgramControllerTest {
     @Autowired
     private TestRestTemplate testRestTemplate;
 
@@ -26,17 +26,12 @@ public class ProjectControllerTest {
     }
 
     @Test
-    public void addNewProject() throws Exception {
+    public void addNewProgram() throws Exception {
 
     }
 
     @Test
-    public void deleteProjectById() throws Exception {
-
-    }
-
-    @Test
-    public void deleteAllProjects() throws Exception {
+    public void deleteAllPrograms() throws Exception {
 
     }
 
@@ -47,9 +42,9 @@ public class ProjectControllerTest {
 
     @Test
     public void returnHello() throws Exception {
-//            String message = "Welcome to Project Page";
-//            String body = this.testRestTemplate.getForObject("/", String.class);
-//            assertThat(body).isEqualTo(message);
+//        String message = "Welcome to the Program Page";
+//        String body = this.testRestTemplate.getForObject("/", String.class);
+//        assertThat(body).isEqualTo(message);
     }
 
 }
