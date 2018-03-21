@@ -14,8 +14,8 @@ import static org.junit.Assert.*;
 /**
  * Created by CraigBook on 2018-03-20.
  */
-//@RunWith(SpringRunner.class)
-//@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@RunWith(SpringRunner.class)
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class StudentControllerTest {
     @Autowired
     private TestRestTemplate testRestTemplate;
@@ -37,9 +37,9 @@ public class StudentControllerTest {
 
     @Test
     public void returnHello() throws Exception {
-//        String message = "Welcome to the Student Page";
-//        String body = this.testRestTemplate.getForObject("/", String.class);
-//        assertThat(body).isEqualTo(message);
+        String message = "Welcome to the Student Page";
+        String body = this.testRestTemplate.getForObject("/student/test", String.class);
+        assertThat(body).isEqualTo(message);
     }
 
 }

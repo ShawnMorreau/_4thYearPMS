@@ -1,13 +1,17 @@
 package sysc4806;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * Created by CraigBook on 2018-03-21.
  */
+@Controller
+@RequestMapping(path="/prof")
 public class ProfController {
     @Autowired
     private ProfRepo profRepo;
