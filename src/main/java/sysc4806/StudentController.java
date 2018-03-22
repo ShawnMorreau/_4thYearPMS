@@ -13,13 +13,12 @@ public class StudentController {
     private StudentRepo studentRepo;
 
     @GetMapping(path="/add")
-    public @ResponseBody String addNewStudent (@RequestParam String name, @RequestParam int studentId, @RequestParam String email, @RequestParam String program) {
+    public @ResponseBody String addNewStudent (@RequestParam String name, @RequestParam String email, @RequestParam String program) {
         // @ResponseBody means the returned String is the response, not a view name
         // @RequestParam means it is a parameter from the GET or POST request
 
         Student s = new Student();
         s.setName(name);
-        s.setStudentId(studentId);
         s.setEmail(email);
         s.setProgram(program);
         studentRepo.save(s);
