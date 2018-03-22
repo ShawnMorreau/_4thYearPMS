@@ -10,10 +10,13 @@ import javax.persistence.Id;
  */
 @Entity
 public class Student {
+
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
     private Integer studentId;
+
     private String name;
+    private String email;
+    private String program;
 
     //    private ProjectRepo project_repo;
 //
@@ -28,7 +31,16 @@ public class Student {
 //    public Student(Double id) {
 //        this.studentId = id;
 //    }
-    public Student(){}
+    public Student(){
+        this("",0,"","");
+    }
+
+    public Student(String name, Integer studentId, String email, String program){
+        this.name = name;
+        this.studentId = studentId;
+        this.email = email;
+        this.program = program;
+    }
 
 //    public void chooseProject(Project prospectiveProject){
 //        currentProject = prospectiveProject;
@@ -52,5 +64,21 @@ public class Student {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getProgram() {
+        return program;
+    }
+
+    public void setProgram(String program) {
+        this.program = program;
     }
 }
