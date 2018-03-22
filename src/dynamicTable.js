@@ -178,18 +178,23 @@ function removeProject(projectId, callback) {
 $(document).ready(function (e) {
     //Create the table here by feeding the dynamicTable function values
 
+
+    //dummy data for students table
     var dummyStudents = [{s: 'adamn', sn: '1234355435', em: 'fudsfhdouf@dfigofg.com', deg: 'SE'},
     {s: 'dfgf', sn: '786545', em: 'fudsfhdouf@dfigofg.com', deg: 'ME'},
     {s: 'wertr', sn: '2344578989', em: 'fudsfhdouf@dfigofg.com', deg: 'EE'}];
 
 
+    //Table to display available projects
     var dt = dynamicTable.config('projectTable', ['id', 'title', 'description', 'programs', 'studentLimit'], ['ID', 'Title', 'Description', 'Programs', 'Max allowed', 'Remove'], //set to null for field names instead of custom header names
         'There are no items to list...');
     fetchProjects(dt.load, true, 1);
 
-
+    //Table to display student info
     var studentInfo = dynamicTable.config('studentTable', ['s','sn','em','deg'], ['Name','Student Number','Email','Program'], 'There are no items to list...');
     studentInfo.load(dummyStudents, true, 2);
+
+
 
     $("form").submit(function (event) {
 
