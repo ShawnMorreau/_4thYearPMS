@@ -5,6 +5,7 @@ The project we are building is a web app for a fourth year project management sy
 * Professors will be able to create/supervise projects and allow students to join their project. 
 * Students will be able to view projects, register for projects, and view upcoming events.
 
+We currently use mysql, please see Setup.md for info on how to run the app locally with it
 
 Current features in localhost only: fetch from MySQL db and update.
 
