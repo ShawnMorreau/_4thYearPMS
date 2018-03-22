@@ -10,12 +10,12 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 
 @Controller
-@RequestMapping(path="/prof")
+@RequestMapping(path="/proof")
 public class profController {
 
     @GetMapping(path="/test")
     public @ResponseBody String returnHello() {
-        // This returns a JSON or XML with the users
+
         return "Hello";
     }
 
