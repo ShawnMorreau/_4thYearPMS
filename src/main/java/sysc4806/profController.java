@@ -11,16 +11,12 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping(path="/prof")
 public class profController {
 
-    @GetMapping(path="/test")
+    @GetMapping(path="/prof")
     public @ResponseBody String returnHello() {
 
         return "Hello";
     }
 
-    @RequestMapping(value = "/select")
-    public String redirect() {
-        return "redirect:/src/projectSelection.html";
-    }
 
 
 
