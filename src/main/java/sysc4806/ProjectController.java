@@ -9,14 +9,13 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import java.util.*;
 
 @Controller
-@CrossOrigin(origins = "http://localhost:3000")
 @RequestMapping(path="/project")
 public class ProjectController {
 
     @Autowired
     private ProjectRepo projectRepo;
 
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "http://localhost:8080")
     @GetMapping(path="/add")
     public @ResponseBody String addNewProject (@RequestParam String title, @RequestParam String description, @RequestParam String programs, @RequestParam int maxStudents) {
         // @ResponseBody means the returned String is the response, not a view name
@@ -29,10 +28,10 @@ public class ProjectController {
         p.setStudentLimit(maxStudents);
         p.setPrograms(programs);
         projectRepo.save(p);
-        return "Saved project: " + title;
+        return "Saved project";
     }
 
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "http://localhost:8080")
     @GetMapping(path="/deleteById")
     public @ResponseBody String deleteProjectById (@RequestParam long id) {
         // @ResponseBody means the returned String is the response, not a view name
@@ -51,7 +50,6 @@ public class ProjectController {
         return "Delete All";
     }
 
-    @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping(path="/all")
     public @ResponseBody Iterable<Project> getAllStudents() {
         // This returns a JSON or XML with the users
