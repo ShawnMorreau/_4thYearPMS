@@ -11,13 +11,9 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping(path="/")
 public class MainController {
 
-    @GetMapping(path="/")
-    public @ResponseBody
-    String returnHello() {
-        // This returns a JSON or XML with the users
-        return "Welcome to Project Management System";
-    }
 
+    @GetMapping("/")
+    public String homePage(){return "home";}
     @GetMapping("/index")
     public String indexPage( ) {
         return "index";
