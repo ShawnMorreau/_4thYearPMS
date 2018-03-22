@@ -179,11 +179,12 @@ $(document).ready(function (e) {
     //Create the table here by feeding the dynamicTable function values
 
 
-    //dummy data for students table
+    //dummy data for testing
     var dummyStudents = [{s: 'adamn', sn: '1234355435', em: 'fudsfhdouf@dfigofg.com', deg: 'SE'},
     {s: 'dfgf', sn: '786545', em: 'fudsfhdouf@dfigofg.com', deg: 'ME'},
     {s: 'wertr', sn: '2344578989', em: 'fudsfhdouf@dfigofg.com', deg: 'EE'}];
 
+    var dummyProject = [title: 'Testing', description: 'testing1233432', professor: 'robertson'];
 
     //Table to display available projects
     var dt = dynamicTable.config('projectTable', ['id', 'title', 'description', 'programs', 'studentLimit'], ['ID', 'Title', 'Description', 'Programs', 'Max allowed', 'Remove'], //set to null for field names instead of custom header names
@@ -195,6 +196,9 @@ $(document).ready(function (e) {
     studentInfo.load(dummyStudents, true, 2);
 
 
+    //Table to display selected project and prof
+    var selectedProf = dynamicTable.config('selectedProjectTable', ['title', 'description', 'professor'], ['Title', 'Description', 'Professor(s)'], 'There are no items to list...');
+    selectedProf.load(dummyProject, true, 0);
 
     //Builds project row for table based on form data
     $("form").submit(function (event) {
