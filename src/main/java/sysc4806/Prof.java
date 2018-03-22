@@ -34,7 +34,6 @@ public class Prof {
 
     public Long getId() {
         return id;
-    }
 
     public void setId(Long id) {
         this.id = id;
@@ -50,11 +49,11 @@ public class Prof {
 /*
     public void addProject(String title, String description, String programs, int studentLimit) {
         Project project_ = new Project(title, description, programs, studentLimit);
-        project_repo.addProject(project_);
+
     }
 
     public void deleteProject(Project project_){
-        project_repo.deleteProject(project_);
+
     }
 
     public void archiveProject(Project project_){

@@ -2,29 +2,30 @@ package sysc4806;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-
+/**
+ * Created by CraigBook on 2018-03-21.
+ */
 @Controller
-@RequestMapping(path="/program")
-public class ProgramController {
-
+@RequestMapping(path="/proj_coord")
+public class ProjectCoordinatorController {
     @Autowired
-    private ProgramRepo programRepo;
+    private ProjectCoordinatorRepo projectCoordinatorRepo;
 
     @GetMapping(path="/add")
-    public @ResponseBody String addNewProgram (@RequestParam String name, @RequestParam String shortName) {
+    public @ResponseBody
+    String addNewProgram (@RequestParam String name) {
         // @ResponseBody means the returned String is the response, not a view name
         // @RequestParam means it is a parameter from the GET or POST request
 
-        Program p = new Program();
+        ProjectCoordinator p = new ProjectCoordinator();
         p.setName(name);
-        p.setShortName(shortName);
-        programRepo.save(p);
-        return "Saved program: " + name;
+        projectCoordinatorRepo.save(p);
+        return "Saved projectCoordinator: " + name;
     }
 
     @GetMapping(path="/delete")
@@ -32,19 +33,19 @@ public class ProgramController {
         // @ResponseBody means the returned String is the response, not a view name
         // @RequestParam means it is a parameter from the GET or POST request
 
-        programRepo.deleteAll();
+        projectCoordinatorRepo.deleteAll();
         return "Delete All";
     }
 
     @GetMapping(path="/all")
-    public @ResponseBody Iterable<Program> getAllStudents() {
+    public @ResponseBody Iterable<ProjectCoordinator> getAllStudents() {
         // This returns a JSON or XML with the users
-        return programRepo.findAll();
+        return projectCoordinatorRepo.findAll();
     }
 
     @GetMapping(path="/test")
     public @ResponseBody String returnHello() {
         // This returns a JSON or XML with the users
-        return "Welcome to the Program Page";
+        return "Welcome to the Project Coordinator Page";
     }
 }

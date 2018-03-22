@@ -59,6 +59,6 @@ public class ProjectController {
     @GetMapping(path="/test")
     public @ResponseBody String returnHello() {
         // This returns a JSON or XML with the users
-        return "Hello";
+        return "Welcome to Project Page";
     }
 }

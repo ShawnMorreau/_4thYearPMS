@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.*;
 
 @Controller
 @CrossOrigin(origins = "http://localhost:8080")
-@RequestMapping(path="/test")
+@RequestMapping(path="/student")
 public class StudentController {
 
     @Autowired
@@ -36,6 +36,6 @@ public class StudentController {
     @GetMapping(path="/test")
     public @ResponseBody String returnHello() {
         // This returns a JSON or XML with the users
-        return "Hello";
+        return "Welcome to the Student Page";
     }
 }
