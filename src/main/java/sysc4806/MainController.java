@@ -28,7 +28,7 @@ public class MainController {
         return "studentHomepage";
     }
 
-    @GetMapping("/project" )
+    @GetMapping("/select" )
     public String projectPage( ) {
         return "projectSelection";
     }
