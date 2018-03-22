@@ -33,7 +33,7 @@ public class SwapPagesTest {
     }
     @Test
     public void getDeadlines() throws Exception {
-        mvc.perform(MockMvcRequestBuilders.get("/deadline").accept(MediaType.APPLICATION_JSON))
+        mvc.perform(MockMvcRequestBuilders.get("/deadlines").accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk());
     }
 }
