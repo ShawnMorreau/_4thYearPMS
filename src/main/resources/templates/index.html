@@ -222,7 +222,7 @@
         var dt = new dynamicTable('projectTable');
         dt.config(['id', 'title', 'description', 'programs', 'studentLimit'], ['ID', 'Title', 'Description', 'Programs', 'Max allowed', 'Remove'], //set to null for field names instead of custom header names
             'There are no items to list...');
-        fetchProjects(dt.load, true, 1);
+        fetchProjects(dt.load, true, 3);
 
         //Table to display student info
         var studentInfo = new dynamicTable('studentTable');
