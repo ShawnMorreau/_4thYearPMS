@@ -19,14 +19,18 @@ public class MainController {
     }
 
     @GetMapping("/index")
-    public String greetingForm(Model model) {
-        model.addAttribute("greeting", new Main());
+    public String indexPage( ) {
         return "index";
     }
 
-    @PostMapping("/index")
-    public String indexSubmit(@ModelAttribute Main main) {
-        return "result";
+    @GetMapping("/student")
+    public String studentPage( ) {
+        return "studentHomepage";
+    }
+
+    @GetMapping("/project" )
+    public String projectPage( ) {
+        return "projectSelection";
     }
 
 

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 
@@ -5,7 +6,7 @@
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/CSS/styles.css">
 <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-<script src="{pageContext.request.contextPath}/resources/js/dynamicTable.js"></script>
+<script src="${pageContext.request.contextPath}/resources/js/dynamicTable.js"></script>
 
 <head>
     <title>Project Management System</title>
@@ -16,7 +17,7 @@
 
 <div className="container">
     <h1>Create a nlcvnblbifew projects:</h1>
-    <form id="form" action="#" th:action="@{/prof" method="post" >
+    <form id="form" action="#" method="post" >
 
         <label>Title: </label>&nbsp<input id='title' type="text" placeholder="Title..." /><br>
         <label>Description: </label>&nbsp<textarea id='description' type="text" placeholder="Description..."></textarea>
