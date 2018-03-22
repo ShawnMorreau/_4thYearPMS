@@ -8,11 +8,12 @@ import org.springframework.web.bind.annotation.*;
  * Created by CraigBook on 2018-03-13.
  */
 @Controller
-@RequestMapping(path="/home")
+@RequestMapping(path="/")
 public class MainController {
 
 
-
+    @GetMapping("/")
+    public String homePage(){return "home";}
     @GetMapping("/index")
     public String indexPage( ) {
         return "index";
