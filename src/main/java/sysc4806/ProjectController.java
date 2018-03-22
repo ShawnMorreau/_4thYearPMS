@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import java.util.*;
 
 @Controller
-@CrossOrigin(origins = "http://localhost:8080")
 @RequestMapping(path="/project")
 public class ProjectController {
 
@@ -51,7 +50,6 @@ public class ProjectController {
         return "Delete All";
     }
 
-    @CrossOrigin(origins = "http://localhost:8080")
     @GetMapping(path="/all")
     public @ResponseBody Iterable<Project> getAllStudents() {
         // This returns a JSON or XML with the users
