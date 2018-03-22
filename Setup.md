@@ -8,6 +8,6 @@ Or, if you don't want/need a background service you can just run:
 You can then do sudo mysql to run it
 
 When you have mysql running, the first time, you should perform the below
-mysql> create database sysc; -- Create the new database
-mysql> create user ‘user’@‘localhost' identified by ‘password’; -- Creates the user
-mysql> grant all on sysc.* to ‘user’@‘localhost'; -- Gives all the privileges to the new user on the newly created database
+* mysql> create database sysc if not exists; -- Create the new database
+* mysql> create user ‘user’@‘localhost' identified by ‘password’; -- Creates the user
+* mysql> grant all on sysc.* to ‘user’@‘localhost'; -- Gives all the privileges to the new user on the newly created database
