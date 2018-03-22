@@ -196,6 +196,7 @@ $(document).ready(function (e) {
 
 
 
+    //Builds project row for table based on form data
     $("form").submit(function (event) {
 
         var title = document.getElementById('title').value;
