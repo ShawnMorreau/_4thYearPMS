@@ -1,9 +1,9 @@
 We currently use mysql to run the database locally, you'll probably need the following steps to do so successfully
 
 To have launchd start mysql now and restart at login:
-  brew services start mysql
+* brew services start mysql
 Or, if you don't want/need a background service you can just run:
-  mysql.server start
+* mysql.server start
   
 You can then do sudo mysql to run it
 
