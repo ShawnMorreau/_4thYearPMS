@@ -19,7 +19,6 @@ public class Prof {
 
     private String name;
 
-    ProjectRepo_ project_repo;
     public Prof() {
         this("");
     }
