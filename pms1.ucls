@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.2.2" icons="true" automaticImage="JPEG" always-add-relationships="true" generalizations="true" 
+  realizations="true" associations="true" dependencies="true" nesting-relationships="true" router="FAN">  
+  <class id="1" language="java" name="sysc4806.Project" project="_4thYearPMS" 
+    file="/_4thYearPMS/src/main/java/sysc4806/Project.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="389" width="189" x="1524" y="441"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="2" language="java" name="sysc4806.ProjectCoordinator" project="_4thYearPMS" 
+    file="/_4thYearPMS/src/main/java/sysc4806/ProjectCoordinator.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="191" width="174" x="1831" y="441"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="3" language="java" name="sysc4806.MvcConfig" project="_4thYearPMS" 
+    file="/_4thYearPMS/src/main/java/sysc4806/MvcConfig.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="101" width="285" x="563" y="123"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="4" language="java" name="sysc4806.ProjectCoordinatorRepo" project="_4thYearPMS" 
+    file="/_4thYearPMS/src/main/java/sysc4806/ProjectCoordinatorRepo.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="65" width="187" x="1623" y="336"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="5" language="java" name="sysc4806.ProfController" project="_4thYearPMS" 
+    file="/_4thYearPMS/src/main/java/sysc4806/ProfController.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="137" width="255" x="1229" y="123"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="6" language="java" name="sysc4806.ProjectController" project="_4thYearPMS" 
+    file="/_4thYearPMS/src/main/java/sysc4806/ProjectController.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="173" width="267" x="1524" y="123"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="7" language="java" name="sysc4806.ProjectRepo" project="_4thYearPMS" 
+    file="/_4thYearPMS/src/main/java/sysc4806/ProjectRepo.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="65" width="114" x="1389" y="336"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <interface id="8" language="java" name="sysc4806.StudentRepo" project="_4thYearPMS" 
+    file="/_4thYearPMS/src/main/java/sysc4806/StudentRepo.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="65" width="114" x="2005" y="336"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="9" language="java" name="sysc4806.ProjectCoordinatorController" project="_4thYearPMS" 
+    file="/_4thYearPMS/src/main/java/sysc4806/ProjectCoordinatorController.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="155" width="269" x="1831" y="123"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="10" language="java" name="sysc4806.Student" project="_4thYearPMS" 
+    file="/_4thYearPMS/src/main/java/sysc4806/Student.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="317" width="217" x="2140" y="441"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="11" language="java" name="sysc4806.StudentController" project="_4thYearPMS" 
+    file="/_4thYearPMS/src/main/java/sysc4806/StudentController.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="137" width="255" x="2140" y="123"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="12" language="java" name="sysc4806.MainController" project="_4thYearPMS" 
+    file="/_4thYearPMS/src/main/java/sysc4806/MainController.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="155" width="137" x="888" y="123"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="13" language="java" name="sysc4806.ProfRepo" project="_4thYearPMS" 
+    file="/_4thYearPMS/src/main/java/sysc4806/ProfRepo.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="65" width="114" x="1094" y="336"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="14" language="java" name="sysc4806.Main" project="_4thYearPMS" 
+    file="/_4thYearPMS/src/main/java/sysc4806/Main.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="119" width="124" x="1065" y="123"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="15" language="java" name="sysc4806.Prof" project="_4thYearPMS" 
+    file="/_4thYearPMS/src/main/java/sysc4806/Prof.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="209" width="139" x="1229" y="441"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="16" language="java" name="sysc4806.Program" project="_4thYearPMS" 
+    file="/_4thYearPMS/src/main/java/sysc4806/Program.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="209" width="168" x="2435" y="441"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="17" language="java" name="sysc4806.ProgramRepo" project="_4thYearPMS" 
+    file="/_4thYearPMS/src/main/java/sysc4806/ProgramRepo.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="65" width="117" x="2297" y="336"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="18" language="java" name="sysc4806.ProgramController" project="_4thYearPMS" 
+    file="/_4thYearPMS/src/main/java/sysc4806/ProgramController.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="155" width="225" x="2435" y="123"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <association id="19">    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="20" name="studentRepo"/>      
+      <multiplicity id="21" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="8" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="22">    
+    <bendpoint x="2444" y="336"/>    
+    <end type="SOURCE" refId="18"/>    
+    <end type="TARGET" refId="16"/>  
+  </dependency>  
+  <dependency id="23">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="2"/>  
+  </dependency>  
+  <association id="24">    
+    <end type="SOURCE" refId="18" navigable="false">      
+      <attribute id="25" name="programRepo"/>      
+      <multiplicity id="26" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="17" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="27">    
+    <end type="SOURCE" refId="9" navigable="false">      
+      <attribute id="28" name="projectCoordinatorRepo"/>      
+      <multiplicity id="29" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="4" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="30">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="10"/>  
+  </dependency>  
+  <dependency id="31">    
+    <bendpoint x="1840" y="336"/>    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="2"/>  
+  </dependency>  
+  <dependency id="32">    
+    <bendpoint x="2149" y="336"/>    
+    <end type="SOURCE" refId="11"/>    
+    <end type="TARGET" refId="10"/>  
+  </dependency>  
+  <association id="33">    
+    <end type="SOURCE" refId="5" navigable="false">      
+      <attribute id="34" name="profRepo"/>      
+      <multiplicity id="35" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="13" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="36">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="1"/>  
+  </dependency>  
+  <dependency id="37">    
+    <end type="SOURCE" refId="17"/>    
+    <end type="TARGET" refId="16"/>  
+  </dependency>  
+  <dependency id="38">    
+    <bendpoint x="1533" y="336"/>    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="1"/>  
+  </dependency>  
+  <association id="39">    
+    <end type="SOURCE" refId="6" navigable="false">      
+      <attribute id="40" name="projectRepo"/>      
+      <multiplicity id="41" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="7" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="42">    
+    <bendpoint x="1238" y="336"/>    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="15"/>  
+  </dependency>  
+  <dependency id="43">    
+    <end type="SOURCE" refId="13"/>    
+    <end type="TARGET" refId="15"/>  
+  </dependency>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+    sort-features="false" accessors="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true" static="true"/>    
+    <operations public="true" package="true" protected="true" private="true" static="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>
