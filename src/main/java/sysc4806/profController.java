@@ -21,7 +21,7 @@ public class profController {
 
     @RequestMapping(value = "/select")
     public String redirect() {
-        return "/_4thYearPMS/src/HTML/index.html";
+        return "redirect:/src/projectSelection.html";
     }
 
 
