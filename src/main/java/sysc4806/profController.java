@@ -10,13 +10,18 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 
 @Controller
-@RequestMapping(path="/proof")
+@RequestMapping(path="/prof")
 public class profController {
 
     @GetMapping(path="/test")
     public @ResponseBody String returnHello() {
 
         return "Hello";
+    }
+
+    @RequestMapping(value = "/select")
+    public String redirect() {
+        return "redirect:/src/index.html";
     }
 
 
