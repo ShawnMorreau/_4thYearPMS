@@ -2,12 +2,10 @@ package sysc4806;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
+@CrossOrigin(origins = "http://localhost:8080")
 @RequestMapping(path="/test")
 public class StudentController {
 
@@ -28,6 +26,7 @@ public class StudentController {
         return "Saved Student";
     }
 
+    @CrossOrigin(origins = "http://localhost:8080")
     @GetMapping(path="/all")
     public @ResponseBody Iterable<Student> getAllStudents() {
         // This returns a JSON or XML with the users
