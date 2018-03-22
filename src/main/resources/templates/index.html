@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">>
+<html xmlns:th="http://www.thymeleaf.org">
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/CSS/styles.css">
 <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-<script src="dynamicTable.js"></script>
+<script src="{pageContext.request.contextPath}/resources/js/dynamicTable.js"></script>
 
 <head>
     <title>Project Management System</title>
@@ -15,8 +15,8 @@
 <div id='root'></div>
 
 <div className="container">
-    <h1>Create a new projects:</h1>
-    <form id="form" action="#" th:action="@{/prof/test}" method="post" >
+    <h1>Create a nlcvnblbifew projects:</h1>
+    <form id="form" action="#" th:action="@{/prof" method="post" >
 
         <label>Title: </label>&nbsp<input id='title' type="text" placeholder="Title..." /><br>
         <label>Description: </label>&nbsp<textarea id='description' type="text" placeholder="Description..."></textarea>
