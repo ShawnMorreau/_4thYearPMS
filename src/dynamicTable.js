@@ -1,6 +1,7 @@
-var dynamicTable = (function () {
+function dynamicTable(tableId) {
 
-    var _tableId, _table,
+    this._tableId = tableId;
+    var _table,
         _fields, _headers,
         _defaultText;
 
@@ -26,9 +27,9 @@ var dynamicTable = (function () {
 
             }else if(id == 2){
 
-                         }else{
-            const id = "remove" + item.id;
-            row += '<td><button id=' + id + ' class=\'remove\' value=' + item.id + ' > X </button></td>';
+            }else{
+                const id = "remove" + item.id;
+                row += '<td><button id=' + id + ' class=\'remove\' value=' + item.id + ' > X </button></td>';
             }
         }
 
@@ -63,8 +64,7 @@ var dynamicTable = (function () {
 
     return {
         /** Configres the dynamic table. */
-        config: function (tableId, fields, headers, defaultText) {
-            _tableId = tableId;
+        config: function (fields, headers, defaultText) {
             _table = $('#' + tableId);
             _fields = fields || null;
             _headers = headers || null;
@@ -76,6 +76,7 @@ var dynamicTable = (function () {
         /** Loads the specified data to the table body. */
         load: function (data, append, id) {
             if (_table.length < 1) return; //not configured.
+
             _setHeaders();
             _removeNoItemsInfo();
             if (data && data.length > 0) {
@@ -108,14 +109,15 @@ var dynamicTable = (function () {
             return this;
         },
     };
-}());
+};
 
-function fetchProjects(callback, append) {
+function fetchProjects(callback, append, id) {
     let projects = new Promise((resolve, reject) => {
         const url = 'http://localhost:8080/project/all';
 
         axios.get(url)
             .then(function (response) {
+                console.log(response.data);
                 resolve(response.data);
             })
             .catch(function (error) {
@@ -124,7 +126,7 @@ function fetchProjects(callback, append) {
                 reject(error);
             });
     }).then(function (result) {
-        callback(result, append);
+        callback(result, append, id);
     });
 
     return projects;
@@ -180,26 +182,25 @@ function removeProject(projectId, callback) {
 $(document).ready(function (e) {
     //Create the table here by feeding the dynamicTable function values
 
-
     //dummy data for testing
     var dummyStudents = [{s: 'adamn', sn: '1234355435', em: 'fudsfhdouf@dfigofg.com', deg: 'SE'},
-    {s: 'dfgf', sn: '786545', em: 'fudsfhdouf@dfigofg.com', deg: 'ME'},
-    {s: 'wertr', sn: '2344578989', em: 'fudsfhdouf@dfigofg.com', deg: 'EE'}];
+        {s: 'dfgf', sn: '786545', em: 'fudsfhdouf@dfigofg.com', deg: 'ME'},
+        {s: 'wertr', sn: '2344578989', em: 'fudsfhdouf@dfigofg.com', deg: 'EE'}];
 
     var dummyProject = [{t: 'testing', desc:'testing13242434', p:'robertson'}];
 
     //Table to display available projects
-    var dt = dynamicTable.config('projectTable', ['id', 'title', 'description', 'programs', 'studentLimit'], ['ID', 'Title', 'Description', 'Programs', 'Max allowed', 'Remove'], //set to null for field names instead of custom header names
+    var dt = new dynamicTable('projectTable');
+    dt.config(['id', 'title', 'description', 'programs', 'studentLimit'], ['ID', 'Title', 'Description', 'Programs', 'Max allowed', 'Remove'], //set to null for field names instead of custom header names
         'There are no items to list...');
     fetchProjects(dt.load, true, 1);
 
     //Table to display student info
-    var studentInfo = dynamicTable.config('studentTable', ['s','sn','em','deg'], ['Name','Student Number','Email','Program'], 'There are no items to list...');
+    var studentInfo = new dynamicTable('studentTable');
+    studentInfo.config(['s','sn','em','deg'], ['Name','Student Number','Email','Program'], 'There are no items to list...');
     studentInfo.load(dummyStudents, true, 2);
 
-    //Table to display selected project info
-    var selectedProject = dynamicTable.config('selectedProjectTable', ['t','desc','p'], ["Title", "Description", "Professor(s)"], 'There are no items to list...');
-    selectedProject.load(dummyProject, true, 0);
+
 
     //Builds project row for table based on form data
     $("form").submit(function (event) {
