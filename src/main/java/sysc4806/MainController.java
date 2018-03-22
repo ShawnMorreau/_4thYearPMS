@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
  * Created by CraigBook on 2018-03-13.
  */
 @Controller
-@RequestMapping(path="/")
+@RequestMapping(path="/home")
 public class MainController {
 
 
