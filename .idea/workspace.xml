@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="c89cb641-87ea-4a4b-bd90-0d869a7f28fb" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/sysc4806/MainController.java" afterPath="$PROJECT_DIR$/src/main/java/sysc4806/MainController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/studentHomepage.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/studentHomepage.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,6 +18,16 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/sysc4806/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="Prof.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/sysc4806/Prof.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -47,15 +56,15 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/sysc4806/MainController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="443">
-              <caret line="30" column="24" lean-forward="false" selection-start-line="30" selection-start-column="24" selection-end-line="30" selection-end-column="24" />
+              <caret line="30" column="27" lean-forward="false" selection-start-line="30" selection-start-column="27" selection-end-line="30" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#523#524#0" expanded="true" />
                 <element signature="e#553#554#0" expanded="true" />
                 <element signature="e#617#618#0" expanded="true" />
                 <element signature="e#657#658#0" expanded="true" />
-                <element signature="e#721#722#0" expanded="true" />
-                <element signature="e#762#763#0" expanded="true" />
+                <element signature="e#722#723#0" expanded="true" />
+                <element signature="e#763#764#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -73,40 +82,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="94">
-              <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="276" selection-end-column="8" />
+            <state relative-caret-position="390">
+              <caret line="257" column="0" lean-forward="true" selection-start-line="257" selection-start-column="0" selection-end-line="257" selection-end-column="0" />
               <folding>
                 <element signature="n#script#3;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#style#0;n#html#0;n#!!top" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="studentHomepage.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="studentHomepage.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/templates/studentHomepage.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="346">
-              <caret line="283" column="38" lean-forward="false" selection-start-line="283" selection-start-column="38" selection-end-line="283" selection-end-column="38" />
-              <folding>
-                <element signature="n#style#0;n#html#0;n#!!top" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="projectSelection.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/projectSelection.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="275" column="8" lean-forward="false" selection-start-line="275" selection-start-column="8" selection-end-line="275" selection-end-column="8" />
-              <folding>
-                <element signature="n#script#3;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#style#0;n#html#0;n#!!top" expanded="false" />
-              </folding>
+            <state relative-caret-position="195">
+              <caret line="13" column="7" lean-forward="true" selection-start-line="13" selection-start-column="7" selection-end-line="13" selection-end-column="7" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -124,28 +117,8 @@
       <file leaf-file-name="dynamicTable.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/js/dynamicTable.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="473">
-              <caret line="211" column="0" lean-forward="true" selection-start-line="211" selection-start-column="0" selection-end-line="211" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ProjectCoordinator.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/sysc4806/ProjectCoordinator.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="11" lean-forward="false" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ProjectController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/sysc4806/ProjectController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="12" column="30" lean-forward="false" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
+            <state relative-caret-position="480">
+              <caret line="223" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="229" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -221,10 +194,9 @@
         <option value="$PROJECT_DIR$/src/main/java/sysc4806/profController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/CSS/styles.css" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/index.jsp" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/index.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/projectSelection.html" />
         <option value="$PROJECT_DIR$/src/main/java/sysc4806/MainController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/studentHomepage.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/index.html" />
       </list>
     </option>
   </component>
@@ -305,14 +277,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="_4thYearPMS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="_4thYearPMS" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="sysc4806" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="_4thYearPMS" type="b2602c69:ProjectViewProjectNode" />
@@ -837,21 +801,7 @@
       <option name="project" value="LOCAL" />
       <updated>1521703838088</updated>
     </task>
-    <task id="LOCAL-00016" summary="temp solution to js and css issue">
-      <created>1521704281670</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1521704281670</updated>
-    </task>
-    <task id="LOCAL-00017" summary="temp solution to js and css issue">
-      <created>1521704322017</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1521704322017</updated>
-    </task>
-    <option name="localTasksCounter" value="18" />
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -902,8 +852,7 @@
     <MESSAGE value="created new template folder" />
     <MESSAGE value="refactored" />
     <MESSAGE value="added navigation and multiple pages" />
-    <MESSAGE value="temp solution to js and css issue" />
-    <option name="LAST_COMMIT_MESSAGE" value="temp solution to js and css issue" />
+    <option name="LAST_COMMIT_MESSAGE" value="added navigation and multiple pages" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -914,6 +863,14 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/main.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/main.java" />
     <entry file="file://$PROJECT_DIR$/public/index.html" />
@@ -932,6 +889,14 @@
     <entry file="file://$PROJECT_DIR$/src/test/java/sysc4806/ProgramControllerTest.java" />
     <entry file="file://$PROJECT_DIR$/src/test/java/sysc4806/ProjectControllerTest.java" />
     <entry file="file://$PROJECT_DIR$/src/test/java/sysc4806/IndexControllerTest.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/sysc4806/ProjectCoordinator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="11" lean-forward="false" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/sysc4806/StudentTest.java" />
     <entry file="file://$PROJECT_DIR$/src/test/java/sysc4806/ProjectCoordinatorTest.java" />
     <entry file="file://$PROJECT_DIR$/src/test/java/sysc4806/ProjectTest.java" />
@@ -1115,6 +1080,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/sysc4806/ProjectController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="12" column="30" lean-forward="false" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/sysc4806/profController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
@@ -1122,6 +1095,38 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/sysc4806/MainController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="443">
+          <caret line="30" column="27" lean-forward="false" selection-start-line="30" selection-start-column="27" selection-end-line="30" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#523#524#0" expanded="true" />
+            <element signature="e#553#554#0" expanded="true" />
+            <element signature="e#617#618#0" expanded="true" />
+            <element signature="e#657#658#0" expanded="true" />
+            <element signature="e#722#723#0" expanded="true" />
+            <element signature="e#763#764#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/studentHomepage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="7" lean-forward="true" selection-start-line="13" selection-start-column="7" selection-end-line="13" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/js/dynamicTable.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="223" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="229" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1135,72 +1140,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="94">
-          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="276" selection-end-column="8" />
+        <state relative-caret-position="390">
+          <caret line="257" column="0" lean-forward="true" selection-start-line="257" selection-start-column="0" selection-end-line="257" selection-end-column="0" />
           <folding>
             <element signature="n#script#3;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/projectSelection.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="275" column="8" lean-forward="false" selection-start-line="275" selection-start-column="8" selection-end-line="275" selection-end-column="8" />
-          <folding>
-            <element signature="n#script#3;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/js/dynamicTable.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="473">
-          <caret line="211" column="0" lean-forward="true" selection-start-line="211" selection-start-column="0" selection-end-line="211" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sysc4806/ProjectCoordinator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="11" lean-forward="false" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sysc4806/ProjectController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="12" column="30" lean-forward="false" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sysc4806/MainController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="443">
-          <caret line="30" column="24" lean-forward="false" selection-start-line="30" selection-start-column="24" selection-end-line="30" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#523#524#0" expanded="true" />
-            <element signature="e#553#554#0" expanded="true" />
-            <element signature="e#617#618#0" expanded="true" />
-            <element signature="e#657#658#0" expanded="true" />
-            <element signature="e#721#722#0" expanded="true" />
-            <element signature="e#762#763#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/studentHomepage.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="346">
-          <caret line="283" column="38" lean-forward="false" selection-start-line="283" selection-start-column="38" selection-end-line="283" selection-end-column="38" />
-          <folding>
-            <element signature="n#style#0;n#html#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
