@@ -9,6 +9,8 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script>
+    var table;
+
     function dynamicTable(tableId) {
 
         this._tableId = tableId;
@@ -102,7 +104,7 @@
                     for (let i = 0; i < removeButtons.length; i++) {
                         const btnId = "remove" + removeButtons[i].value;
                         $(`#${btnId}`).click(function(e) {
-                            dynamicTable.clearRow(e.target.value);
+                            table.clearRow(e.target.value);
                         });
                     }
                 } else {
@@ -111,12 +113,12 @@
                 return this;
             },
             add: function(data) {
-                addProject(data, this.load);
+                addProject(data, table.load);
                 return this;
             },
             /** Clears the table body. */
             clearRow: function(value) {
-                removeProject(value, dynamicTable.load);
+                removeProject(value, table.load);
                 return this;
             },
         };
@@ -124,7 +126,12 @@
 
     function fetchProjects(callback, append, id) {
         let projects = new Promise((resolve, reject) => {
-            const url = '/project/all';
+            let url = "";
+            if (window.location.hostname.indexOf("localhost") >= 0) {
+                url = 'http://localhost:8080/project/all';
+            } else {
+                url = '/project/all';
+            }
 
             axios.get(url)
                 .then(function(response) {
@@ -145,7 +152,12 @@
 
     function addProject(data, callback) {
         let addProject = new Promise((resolve, reject) => {
-            const url = `/project/add?title=${data.title}&description=${data.description}&programs=${data.programs}&maxStudents=${data.studentLimit}&`;
+            let url = "";
+            if (window.location.hostname.indexOf("localhost") >= 0) {
+                url = `http://localhost:8080/project/add?title=${data.title}&description=${data.description}&programs=${data.programs}&maxStudents=${data.studentLimit}&`;
+            } else {
+                url = `/project/add?title=${data.title}&description=${data.description}&programs=${data.programs}&maxStudents=${data.studentLimit}&`;
+            }
 
             axios.get(url)
                 .then(function(response) {
@@ -169,7 +181,12 @@
 
     function removeProject(projectId, callback) {
         let removeProject = new Promise((resolve, reject) => {
-            const url = `/project/deleteById?id=${projectId}`;
+            let url = "";
+            if (window.location.hostname.indexOf("localhost") >= 0) {
+                url = `http://localhost:8080/project/deleteById?id=${projectId}`;
+            } else {
+                url = `/project/deleteById?id=${projectId}`;
+            }
             axios.get(url)
                 .then(function(response) {
                     resolve(response.data);
@@ -220,17 +237,22 @@
             p: 'robertson'
         }];
 
-        //Table to display available projects
+        //create table instances
         var dt = new dynamicTable('projectTable');
+        var studentInfo = new dynamicTable('studentTable');
+        //configure tables
         dt.config(['id', 'title', 'description', 'programs', 'studentLimit'], ['ID', 'Title', 'Description', 'Programs', 'Max allowed', 'Remove'], //set to null for field names instead of custom header names
             'There are no items to list...');
-        fetchProjects(dt.load, true, 1);
-
-        //Table to display student info
-        var studentInfo = new dynamicTable('studentTable');
         studentInfo.config(['s', 'sn', 'em', 'deg'], ['Name', 'Student Number', 'Email', 'Program'], 'There are no items to list...');
+        //set global table
+        if ($(`#${'projectTable'}`)) {
+            table = dt;
+        } else if ($(`#${'studentTable'}`)) {
+            table = studentInfo;
+        }
+        //load tables
+        fetchProjects(dt.load, true, 1);
         studentInfo.load(dummyStudents, true, 2);
-
 
 
         //Builds project row for table based on form data
@@ -258,7 +280,6 @@
             return false;
         });
     });
-
 </script>
 <style>
     .grid-container {
@@ -294,7 +315,6 @@
 
         padding: 25px;
     }
-
 </style>
 
 <head>
@@ -309,7 +329,7 @@
         </div>
         <ul class="nav navbar-nav">
             <li><a href="/home">Home</a></li>
-            <li class = "active"><a href="/project">Projects</a></li>
+            <li class="active"><a href="/project">Projects</a></li>
             <li><a href="events">Events</a></li>
             <li><a href="/deadlines">Deadlines</a></li>
         </ul>

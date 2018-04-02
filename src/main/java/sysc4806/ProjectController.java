@@ -9,13 +9,13 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import java.util.*;
 
 @Controller
+@CrossOrigin(origins = {"http://localhost:8080", "http://localhost:63342"})
 @RequestMapping(path="/project")
 public class ProjectController {
 
     @Autowired
     private ProjectRepo projectRepo;
 
-    @CrossOrigin(origins = "http://localhost:8080")
     @GetMapping(path="/add")
     public @ResponseBody String addNewProject (@RequestParam String title, @RequestParam String description, @RequestParam String programs, @RequestParam int maxStudents) {
         // @ResponseBody means the returned String is the response, not a view name
@@ -31,14 +31,13 @@ public class ProjectController {
         return "Saved project";
     }
 
-    @CrossOrigin(origins = "http://localhost:8080")
     @GetMapping(path="/deleteById")
     public @ResponseBody String deleteProjectById (@RequestParam long id) {
         // @ResponseBody means the returned String is the response, not a view name
         // @RequestParam means it is a parameter from the GET or POST request
 
         projectRepo.deleteById(id);
-        return "Delete: " + id;
+        return "DeleteId";
     }
 
     @GetMapping(path="/deleteAll")
