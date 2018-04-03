@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 
+
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<link rel="stylesheet" href="styles.css">
+
 <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-<script src="dynamicTable.js"></script>
-<script>
-    var table;
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script>
     function dynamicTable(tableId) {
 
         this._tableId = tableId;
@@ -102,7 +103,7 @@
                     for (let i = 0; i < removeButtons.length; i++) {
                         const btnId = "remove" + removeButtons[i].value;
                         $(`#${btnId}`).click(function(e) {
-                            table.clearRow(e.target.value);
+                            dynamicTable.clearRow(e.target.value);
                         });
                     }
                 } else {
@@ -111,12 +112,12 @@
                 return this;
             },
             add: function(data) {
-                addProject(data, table.load);
+                addProject(data, this.load);
                 return this;
             },
             /** Clears the table body. */
             clearRow: function(value) {
-                removeProject(value, table.load);
+                removeProject(value, dynamicTable.load);
                 return this;
             },
         };
@@ -124,12 +125,7 @@
 
     function fetchProjects(callback, append, id) {
         let projects = new Promise((resolve, reject) => {
-            let url = "";
-            if (window.location.hostname.indexOf("localhost") >= 0) {
-                url = 'http://localhost:8080/project/all';
-            } else {
-                url = '/project/all';
-            }
+            const url = '/project/all';
 
             axios.get(url)
                 .then(function(response) {
@@ -150,12 +146,7 @@
 
     function addProject(data, callback) {
         let addProject = new Promise((resolve, reject) => {
-            let url = "";
-            if (window.location.hostname.indexOf("localhost") >= 0) {
-                url = `http://localhost:8080/project/add?title=${data.title}&description=${data.description}&programs=${data.programs}&maxStudents=${data.studentLimit}&`;
-            } else {
-                url = `/project/add?title=${data.title}&description=${data.description}&programs=${data.programs}&maxStudents=${data.studentLimit}&`;
-            }
+            const url = `/project/add?title=${data.title}&description=${data.description}&programs=${data.programs}&maxStudents=${data.studentLimit}&`;
 
             axios.get(url)
                 .then(function(response) {
@@ -179,12 +170,7 @@
 
     function removeProject(projectId, callback) {
         let removeProject = new Promise((resolve, reject) => {
-            let url = "";
-            if (window.location.hostname.indexOf("localhost") >= 0) {
-                url = `http://localhost:8080/project/deleteById?id=${projectId}`;
-            } else {
-                url = `/project/deleteById?id=${projectId}`;
-            }
+            const url = `/project/deleteById?id=${projectId}`;
             axios.get(url)
                 .then(function(response) {
                     resolve(response.data);
@@ -235,22 +221,17 @@
             p: 'robertson'
         }];
 
-        //create table instances
+        //Table to display available projects
         var dt = new dynamicTable('projectTable');
-        var studentInfo = new dynamicTable('studentTable');
-        //configure tables
         dt.config(['id', 'title', 'description', 'programs', 'studentLimit'], ['ID', 'Title', 'Description', 'Programs', 'Max allowed', 'Remove'], //set to null for field names instead of custom header names
             'There are no items to list...');
-        studentInfo.config(['s', 'sn', 'em', 'deg'], ['Name', 'Student Number', 'Email', 'Program'], 'There are no items to list...');
-        //set global table
-        if ($(`#${'projectTable'}`)) {
-            table = dt;
-        } else if ($(`#${'studentTable'}`)) {
-            table = studentInfo;
-        }
-        //load tables
         fetchProjects(dt.load, true, 1);
+
+        //Table to display student info
+        var studentInfo = new dynamicTable('studentTable');
+        studentInfo.config(['s', 'sn', 'em', 'deg'], ['Name', 'Student Number', 'Email', 'Program'], 'There are no items to list...');
         studentInfo.load(dummyStudents, true, 2);
+
 
 
         //Builds project row for table based on form data
@@ -280,88 +261,14 @@
     });
 
 </script>
-<style>
-    .grid-container {
-        display: inline-grid;
-        grid-template-columns: auto auto auto;
-    }
-
-    .grid-item {
-        padding: 10px;
-    }
-
-    thead {
-        background-color: #8CCCF1;
-        border: 1px solid black;
-
-    }
-
-    th {
-        height: 40px;
-        border: 1px solid black;
-        text-align: center;
-
-    }
-
-    table {
-        width: 100%;
-        border: 1px solid black;
-
-    }
-
-
-    .studentContainer {
-
-        padding: 25px;
-    }
-
-</style>
 
 <head>
-    <title>Student Homepage</title>
-
-
+    <title>Project Coordinator View</title>
 </head>
-<div>
-    <form method='get' action="/select">
-        <label>Go to project Selection Page: </label><button> click me </button>
-    </form>
-    <form method='get' action="/availability">
-        <label>Go to Availability Selection Page: </label><button> click me </button>
-    </form>
-</div>
-<div class='studentContainer'>
-    <div class='studentContainer'>
-        Student and Group information
-
-        <table id='studentTable'>
-
-        </table>
-    </div>
-
-    <div class='studentContainer'>
-        Project and Professor information
-        <table id='selectedProjectTable'>
-
-        </table>
-
-    </div>
 
 
-    <div class='studentContainer'>
-        File Submission will go here
 
-        <form id="fileSumbission"  enctype="multipart/form-data" action="" method="post">
-            <label>Submit a rough draft</label>
-            <input type="file" id="roughDraft" name="file">
-            <br>
-            <label>Submit a final report</label>
-            <input type="file" id="finalReport" name="file">
-            <br><input type="submit">
 
-        </form>
-    </div>
 
-</div>
 
 </html>
