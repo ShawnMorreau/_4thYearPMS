@@ -5,7 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
-@CrossOrigin(origins = "http://localhost:8080")
+@CrossOrigin(origins = {"http://localhost:8080", "http://localhost:63342"})
 @RequestMapping(path="/student")
 public class StudentController {
 
@@ -25,7 +25,6 @@ public class StudentController {
         return "Saved Student";
     }
 
-    @CrossOrigin(origins = "http://localhost:8080")
     @GetMapping(path="/all")
     public @ResponseBody Iterable<Student> getAllStudents() {
         // This returns a JSON or XML with the users

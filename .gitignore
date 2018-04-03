@@ -1,8 +1,4 @@
 # Created by .ignore support plugin (hsz.mobi)
-#.gitignore
+
 target/
-#.idea/
-#.idea/workspace.xml
-#.idea/*
-/_4thYearPMS.eml
-/_4thYearPMS.iml
+.idea/workspace.xml
