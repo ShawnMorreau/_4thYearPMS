@@ -304,6 +304,9 @@
     <form method='get' action="/select">
         <label>Go to project Selection Page: </label><button> click me </button>
     </form>
+    <form method='get' action="/availability">
+        <label>Go to Availability Selection Page: </label><button> click me </button>
+    </form>
 </div>
 <div class='studentContainer'>
     <div class='studentContainer'>
@@ -326,7 +329,7 @@
     <div class='studentContainer'>
         File Submission will go here
 
-        <form id="fileSumbission" action="">
+        <form id="fileSumbission"  enctype="multipart/form-data" action="" method="post">
             <label>Submit a rough draft</label>
             <input type="file" id="roughDraft" name="file">
             <br>

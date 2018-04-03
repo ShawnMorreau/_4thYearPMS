@@ -15,7 +15,8 @@ public class ProjectController {
     @Autowired
     private ProjectRepo projectRepo;
 
-    @CrossOrigin(origins = "http://localhost:8080")
+    //@CrossOrigin(origins = "http://localhost:8080")
+    @CrossOrigin(origins = "http://localhost:63342")
     @GetMapping(path="/add")
     public @ResponseBody String addNewProject (@RequestParam String title, @RequestParam String description, @RequestParam String programs, @RequestParam int maxStudents) {
         // @ResponseBody means the returned String is the response, not a view name
@@ -50,6 +51,7 @@ public class ProjectController {
         return "Delete All";
     }
 
+    @CrossOrigin(origins = "http://localhost:63342")
     @GetMapping(path="/all")
     public @ResponseBody Iterable<Project> getAllStudents() {
         // This returns a JSON or XML with the users

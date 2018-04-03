@@ -29,5 +29,9 @@ public class MainController {
         return "projectSelection";
     }
 
+    @GetMapping("/availability" )
+    public String AvailabilityPage( ) {
+        return "availability";
+    }
 
 }

@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-
+<meta charset="utf-8"/>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/CSS/styles.css">
 <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-<script src="${pageContext.request.contextPath}/resources/js/dynamicTable.js"></script>
+<script type="application/javascript" src="${pageContext.request.contextPath}/js/dynamicTable.js"></script>
 <script>
     function dynamicTable(tableId) {
 
@@ -256,6 +256,7 @@
             return false;
         });
     });
+
 </script>
 <style>
     .grid-container {
