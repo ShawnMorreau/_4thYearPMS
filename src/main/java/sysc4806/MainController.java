@@ -34,4 +34,9 @@ public class MainController {
         return "availability";
     }
 
+    @GetMapping("/coordinator" )
+    public String CoordinatorPage( ) {
+        return "projectCoordinator";
+    }
+
 }
