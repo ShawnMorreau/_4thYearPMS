@@ -32,6 +32,7 @@
 
                 //id = 1 --> No remove button in the header
                 //id = 2 --> No remove button in each row
+                //id = 3 --> Adds Email group button
                 if (id == 0) {
 
 
@@ -39,8 +40,12 @@
 
                 } else if (id == 2) {
 
-                } else {
-                    const id = "remove" + item.id;
+                } else if (id == 3) {
+                    row += '<td><button onclick="showEmails()" id="emailGroup"> Show Emails </button></td>';
+
+                }else {
+                        const id = "remove" + item.id
+
                     row += '<td><button id=' + id + ' class=\'remove\' value=' + item.id + ' > X </button></td>';
                 }
             }
@@ -122,6 +127,16 @@
             },
         };
     };
+
+    //shows all student emails associated with a specific group
+    function showEmails() {
+         var emails = "trtrt@etrt.com";
+
+        //student emails go in alert below
+            alert(emails);
+
+    }
+
 
     function fetchProjects(callback, append, id) {
         let projects = new Promise((resolve, reject) => {
@@ -233,6 +248,10 @@
         studentInfo.load(dummyStudents, true, 2);
 
 
+        //list of all projects
+        var projects = new dynamicTable('listOfProjects');
+        projects.config(['s', 'sn', 'em', 'deg'], ['Name', 'Student Number', 'Email', 'Program'], 'There are no items to list...');
+        projects.load(dummyStudents, true, 3);
 
         //Builds project row for table based on form data
         $("form").submit(function(event) {
@@ -258,15 +277,69 @@
             checked = ' ';
             return false;
         });
+        
+
+        
+        
+        
+        
     });
 
 </script>
+<style>
+    .grid-container {
+        display: inline-grid;
+        grid-template-columns: auto auto auto;
+    }
+
+    .grid-item {
+        padding: 10px;
+    }
+
+    thead {
+        background-color: #8CCCF1;
+        border: 1px solid black;
+
+    }
+
+    th {
+        height: 40px;
+        border: 1px solid black;
+        text-align: center;
+
+    }
+
+    table {
+        width: 100%;
+        border: 1px solid black;
+
+    }
+
+
+    .studentContainer {
+
+        padding: 25px;
+    }
+</style>
 
 <head>
     <title>Project Coordinator View</title>
 </head>
 
 
+<body>
+<header>List of current projects: (currently dummy data)</header><br>
+<div>
+    <table id ='listOfProjects'>
+
+
+    </table>
+
+
+</div>
+
+
+</body>
 
 
 
