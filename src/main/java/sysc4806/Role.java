@@ -13,15 +13,6 @@ public class Role {
     @Column(name = "role")
     private String role;
 
-    public Role(){
-        this(-1,"");
-    }
-
-    public Role(int value, String description) {
-        this.id = value;
-        this.role = description;
-    }
-
     public int getId(){
         return id;
     }
