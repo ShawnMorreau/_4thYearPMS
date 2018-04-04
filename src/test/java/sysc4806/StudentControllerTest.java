@@ -35,11 +35,11 @@ public class StudentControllerTest {
 
     }
 
-    @Test
-    public void returnHello() throws Exception {
-        String message = "Welcome to the Student Page";
-        String body = this.testRestTemplate.getForObject("/student/test", String.class);
-        assertThat(body).isEqualTo(message);
-    }
+//    @Test
+//    public void returnHello() throws Exception {
+//        String message = "Welcome to the Student Page";
+//        String body = this.testRestTemplate.getForObject("/student/test", String.class);
+//        assertThat(body).isEqualTo(message);
+//    }
 
 }

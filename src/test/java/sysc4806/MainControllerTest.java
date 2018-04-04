@@ -27,7 +27,7 @@ public class MainControllerTest {
 
     @Test
     public void returnHello() throws Exception {
-        mvc.perform(MockMvcRequestBuilders.get("/deadlines").accept(MediaType.APPLICATION_JSON))
+        mvc.perform(MockMvcRequestBuilders.get("/home").accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk());
     }
 

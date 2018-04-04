@@ -35,11 +35,11 @@ public class ProfControllerTest {
 
     }
 
-    @Test
-    public void returnHello() throws Exception {
-        String message = "Welcome to the Prof Page";
-        String body = this.testRestTemplate.getForObject("/prof/test", String.class);
-        assertThat(body).isEqualTo(message);
-    }
+//    @Test
+//    public void returnHello() throws Exception {
+//        String message = "Welcome to the Prof Page";
+//        String body = this.testRestTemplate.getForObject("/prof/test", String.class);
+//        assertThat(body).isEqualTo(message);
+//    }
 
 }

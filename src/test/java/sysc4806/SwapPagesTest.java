@@ -26,14 +26,4 @@ public class SwapPagesTest {
         mvc.perform(MockMvcRequestBuilders.get("/").accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk());
     }
-    @Test
-    public void getEvents() throws Exception {
-        mvc.perform(MockMvcRequestBuilders.get("/events").accept(MediaType.APPLICATION_JSON))
-                .andExpect(status().isOk());
-    }
-    @Test
-    public void getDeadlines() throws Exception {
-        mvc.perform(MockMvcRequestBuilders.get("/deadlines").accept(MediaType.APPLICATION_JSON))
-                .andExpect(status().isOk());
-    }
 }

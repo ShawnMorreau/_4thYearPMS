@@ -40,11 +40,11 @@ public class ProjectCoordinatorControllerTest {
 
     }
 
-    @Test
-    public void returnHello() throws Exception {
-        String message = "Welcome to the Project Coordinator Page";
-        String body = this.testRestTemplate.getForObject("/proj_coord/test", String.class);
-        assertThat(body).isEqualTo(message);
-    }
+//    @Test
+//    public void returnHello() throws Exception {
+//        String message = "Welcome to the Project Coordinator Page";
+//        String body = this.testRestTemplate.getForObject("/proj_coord/test", String.class);
+//        assertThat(body).isEqualTo(message);
+//    }
 
 }
