@@ -39,4 +39,9 @@ public class MainController {
         return "projectCoordinator";
     }
 
+    @GetMapping("/fileSubmission" )
+    public String SubmissionPage( ) {
+        return "fileSubmission";
+    }
+
 }

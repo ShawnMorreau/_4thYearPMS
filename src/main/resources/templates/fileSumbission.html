@@ -6,8 +6,6 @@
 <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script src="dynamicTable.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script>
     var table;
 
@@ -280,6 +278,7 @@
             return false;
         });
     });
+
 </script>
 <style>
     .grid-container {
@@ -315,31 +314,43 @@
 
         padding: 25px;
     }
+
 </style>
 
+
 <head>
-    <title>Student View</title>
+    <title>File submission page</title>
+
+
 </head>
 
-<body>
-<nav class="navbar navbar-default">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <a class="navbar-brand" href="/">4th Year PMS</a>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">4th Year PMS</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a href="#">Home</a></li>
+                <li><a href="/select">Project Selection</a></li>
+                <li><a href="/availability">Availability Selection</a></li>
+                <li class="active"><a href="/fileSubmission">Submit Files</a></li>
+                <li><a href="#">Deadlines</a></li>            </ul>
         </div>
-        <ul class="nav navbar-nav">
-            <li><a href="#">Home</a></li>
-            <li class="active"><a href="/select">Project Selection</a></li>
-            <li><a href="/availability">Availability Selection</a></li>
-            <li><a href="/fileSubmission">Submit Files</a></li>
-            <li><a href="#">Deadlines</a></li>        </ul>
-    </div>
-</nav>
-<div>
-    <h1>Select A project: </h1>
-    <table id="projectTable">
-    </table>
+    </nav>
+
+
+<div class='studentContainer'>
+    File Submission will go here
+
+    <form id="fileSumbission"  enctype="multipart/form-data" action="" method="post">
+        <label>Submit a rough draft</label>
+        <input type="file" id="roughDraft" name="file">
+        <br>
+        <label>Submit a final report</label>
+        <input type="file" id="finalReport" name="file">
+        <br><input type="submit">
+
+    </form>
 </div>
-</body>
 
 </html>
