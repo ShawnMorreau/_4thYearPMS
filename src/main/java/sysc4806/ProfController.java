@@ -34,7 +34,7 @@ public class ProfController {
     }
 
     @GetMapping(path="/project/add")
-    public @ResponseBody String addNewProject (@RequestParam long profId, @RequestParam String title, @RequestParam String description, @RequestParam String programs, @RequestParam int maxStudents) {
+    public @ResponseBody String addNewProject (@RequestParam Long profId, @RequestParam String title, @RequestParam String description, @RequestParam String programs, @RequestParam int maxStudents) {
         Optional<Prof> op = profRepo.findById(profId);
         if(op.isPresent()){
             Prof prof = op.get();
@@ -44,12 +44,13 @@ public class ProfController {
             projectRepo.save(p);
             return "Project added";
         }else{
+
             return "Prof not found";
         }
     }
 
     @GetMapping(path="/all")
-    public @ResponseBody Iterable<Prof> getAllStudents() {
+    public @ResponseBody Iterable<Prof> getAllProfs() {
         return profRepo.findAll();
     }
 

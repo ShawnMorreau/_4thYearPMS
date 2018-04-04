@@ -45,6 +45,11 @@ public class ProjectController {
         }
     }
 
+    @GetMapping(path="/all")
+    public @ResponseBody Iterable<Project> getAllProjects() {
+        return projectRepo.findAll();
+    }
+
     @GetMapping(path="/deleteById")
     public @ResponseBody String deleteProjectById (@RequestParam long id) {
         projectRepo.deleteById(id);
@@ -55,11 +60,6 @@ public class ProjectController {
     public @ResponseBody String deleteAllProjects () {
         projectRepo.findAll().forEach(project -> projectRepo.delete(project));
         return "Delete All";
-    }
-
-    @GetMapping(path="/all")
-    public @ResponseBody Iterable<Project> getAllStudents() {
-        return projectRepo.findAll();
     }
 
     @GetMapping(path="/test")
