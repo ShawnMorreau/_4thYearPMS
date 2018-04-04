@@ -17,6 +17,8 @@ before_script:
   - mysql -e 'create database sysc;'
   - mysql -e "create user 'user'@'localhost' identified by 'password';"
   - mysql -e "grant all on sysc.* to 'user'@'localhost';"
+  - mysql -e "ALTER TABLE PROF AUTO_INCREMENT = 1;"
+  - mysql -e "ALTER TABLE PROJECT AUTO_INCREMENT = 1;"
 deploy:
   provider: heroku
   app:
