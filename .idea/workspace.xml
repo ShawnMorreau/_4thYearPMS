@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c89cb641-87ea-4a4b-bd90-0d869a7f28fb" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/templates/fileSumbission.html" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sysc4806/MainController.java" afterPath="$PROJECT_DIR$/src/main/java/sysc4806/MainController.java" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/availability.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/availability.html" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fileSumbission.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/fileSumbission.html" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/projectSelection.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/projectSelection.html" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/studentHomepage.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/studentHomepage.html" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -25,21 +23,8 @@
       <file leaf-file-name="studentHomepage.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/templates/studentHomepage.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="364">
-              <caret line="335" column="50" lean-forward="true" selection-start-line="334" selection-start-column="16" selection-end-line="335" selection-end-column="50" />
-              <folding>
-                <element signature="n#script#3;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#style#0;n#html#0;n#!!top" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="fileSumbission.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/fileSumbission.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="246">
-              <caret line="325" column="0" lean-forward="true" selection-start-line="325" selection-start-column="0" selection-end-line="325" selection-end-column="0" />
+            <state relative-caret-position="226">
+              <caret line="331" column="20" lean-forward="false" selection-start-line="331" selection-start-column="20" selection-end-line="331" selection-end-column="20" />
               <folding>
                 <element signature="n#script#3;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#style#0;n#html#0;n#!!top" expanded="false" />
@@ -51,54 +36,39 @@
       <file leaf-file-name="availability.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/templates/availability.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="660">
-              <caret line="44" column="46" lean-forward="false" selection-start-line="44" selection-start-column="46" selection-end-line="44" selection-end-column="46" />
-              <folding />
+            <state relative-caret-position="299">
+              <caret line="356" column="30" lean-forward="false" selection-start-line="356" selection-start-column="30" selection-end-line="356" selection-end-column="30" />
+              <folding>
+                <element signature="n#script#5;n#head#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#style#0;n#head#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#style#1;n#head#0;n#html#0;n#!!top" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/index.html">
+      <file leaf-file-name="projectSelection.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/projectSelection.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="14" lean-forward="false" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="15" />
+            <state relative-caret-position="360">
+              <caret line="330" column="15" lean-forward="false" selection-start-line="330" selection-start-column="15" selection-end-line="330" selection-end-column="15" />
               <folding>
+                <element signature="n#script#5;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#style#0;n#html#0;n#!!top" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MainController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/sysc4806/MainController.java">
+      <file leaf-file-name="fileSumbission.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/fileSumbission.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="36" column="32" lean-forward="true" selection-start-line="36" selection-start-column="32" selection-end-line="36" selection-end-column="32" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="projectCoordinator.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/projectCoordinator.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="336" column="22" lean-forward="false" selection-start-line="336" selection-start-column="12" selection-end-line="336" selection-end-column="22" />
+            <state relative-caret-position="289">
+              <caret line="332" column="19" lean-forward="false" selection-start-line="332" selection-start-column="19" selection-end-line="332" selection-end-column="19" />
               <folding>
-                <element signature="n#script#4;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#script#3;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#style#0;n#html#0;n#!!top" expanded="false" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="event.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/event.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="9">
-              <caret line="1" column="41" lean-forward="false" selection-start-line="1" selection-start-column="41" selection-end-line="1" selection-end-column="41" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -185,11 +155,11 @@
         <option value="$PROJECT_DIR$/src/main/resources/templates/index.html" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/projectCoordinator.html" />
         <option value="$PROJECT_DIR$/src/main/java/sysc4806/MainController.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/studentHomepage.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/availability.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/projectSelection.html" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/navbar.html" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/studentNavbar.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/availability.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/studentHomepage.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/projectSelection.html" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/fileSumbission.html" />
       </list>
     </option>
@@ -840,11 +810,18 @@
       <option name="project" value="LOCAL" />
       <updated>1522818808339</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="added file submission page and rearranged some navbars">
+      <created>1522819986116</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1522819986116</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23755000" />
+    <option name="totallyTimeSpent" value="24167000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1440" height="833" extended-state="6" />
@@ -929,7 +906,8 @@
     <MESSAGE value="removed js file" />
     <MESSAGE value="Merge branches 'DamanUI1.1' and 'master' of https://github.com/ShawnMorreau/_4thYearPMS into DamanUI1.1&#10;&#10;&#10;&#10;created projectCoordinator view. added email students button" />
     <MESSAGE value="Added nav bar to all pages with different buttons depending on student or prof" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added nav bar to all pages with different buttons depending on student or prof" />
+    <MESSAGE value="added file submission page and rearranged some navbars" />
+    <option name="LAST_COMMIT_MESSAGE" value="added file submission page and rearranged some navbars" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1179,22 +1157,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/deadline.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="41" lean-forward="false" selection-start-line="1" selection-start-column="41" selection-end-line="1" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/home.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="41" lean-forward="false" selection-start-line="1" selection-start-column="41" selection-end-line="1" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/fileSubmission">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1203,38 +1165,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/availability.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="44" column="46" lean-forward="false" selection-start-line="44" selection-start-column="46" selection-end-line="44" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/event.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="9">
-          <caret line="1" column="41" lean-forward="false" selection-start-line="1" selection-start-column="41" selection-end-line="1" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/projectSelection.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="334" column="46" lean-forward="false" selection-start-line="334" selection-start-column="46" selection-end-line="334" selection-end-column="46" />
-          <folding>
-            <element signature="n#script#5;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/studentNavbar.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="15" column="6" lean-forward="false" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/sysc4806/MainController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="36" column="32" lean-forward="true" selection-start-line="36" selection-start-column="32" selection-end-line="36" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="317" selection-end-column="0" />
+          <folding>
+            <element signature="n#script#4;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1249,20 +1203,46 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/index.html">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/deadline.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="14" lean-forward="false" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="15" />
+        <state relative-caret-position="15">
+          <caret line="1" column="41" lean-forward="false" selection-start-line="1" selection-start-column="41" selection-end-line="1" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/event.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9">
+          <caret line="1" column="41" lean-forward="false" selection-start-line="1" selection-start-column="41" selection-end-line="1" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="41" lean-forward="false" selection-start-line="1" selection-start-column="41" selection-end-line="1" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/availability.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="356" column="30" lean-forward="false" selection-start-line="356" selection-start-column="30" selection-end-line="356" selection-end-column="30" />
           <folding>
-            <element signature="n#style#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#script#5;n#head#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#head#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#1;n#head#0;n#html#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/studentHomepage.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="335" column="50" lean-forward="true" selection-start-line="334" selection-start-column="16" selection-end-line="335" selection-end-column="50" />
+        <state relative-caret-position="226">
+          <caret line="331" column="20" lean-forward="false" selection-start-line="331" selection-start-column="20" selection-end-line="331" selection-end-column="20" />
           <folding>
             <element signature="n#script#3;n#html#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#html#0;n#!!top" expanded="false" />
@@ -1270,18 +1250,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sysc4806/MainController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/projectSelection.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="36" column="32" lean-forward="true" selection-start-line="36" selection-start-column="32" selection-end-line="36" selection-end-column="32" />
-          <folding />
+        <state relative-caret-position="360">
+          <caret line="330" column="15" lean-forward="false" selection-start-line="330" selection-start-column="15" selection-end-line="330" selection-end-column="15" />
+          <folding>
+            <element signature="n#script#5;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/fileSumbission.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="325" column="0" lean-forward="true" selection-start-line="325" selection-start-column="0" selection-end-line="325" selection-end-column="0" />
+        <state relative-caret-position="289">
+          <caret line="332" column="19" lean-forward="false" selection-start-line="332" selection-start-column="19" selection-end-line="332" selection-end-column="19" />
           <folding>
             <element signature="n#script#3;n#html#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#html#0;n#!!top" expanded="false" />
