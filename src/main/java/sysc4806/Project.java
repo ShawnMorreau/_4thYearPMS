@@ -1,9 +1,7 @@
 package sysc4806;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,25 +14,37 @@ import java.util.List;
 public class Project {
 
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
-
 
     private String title;
     private String description;
     private String programs;
     private int studentLimit;
+
+    @OneToMany(targetEntity=Student.class, mappedBy="project", fetch=FetchType.LAZY)
+    private List<Student> students;
+
+    @ManyToMany(cascade=CascadeType.ALL)
+    @NotEmpty
+    @JoinTable(name="prof_project", joinColumns=@JoinColumn(name="projectId"), inverseJoinColumns=@JoinColumn(name="profId"))
+    private List<Prof> profs;
+
     public Project(){
-//        this();
         this("","", "", 0);
-//        this
     }
 
     public Project(String title, String description, String programs, int studentLimit) {
+        this(title, description, programs, studentLimit, new ArrayList<Prof>(), new ArrayList<Student>());
+    }
+
+    public Project(String title, String description, String programs, int studentLimit, List<Prof> profs, List<Student> students) {
         this.title = title;
         this.description = description;
         this.programs = programs;
         this.studentLimit = studentLimit;
+        this.profs = profs;
+        this.students = students;
     }
 
     public boolean validProject(){
@@ -80,5 +90,33 @@ public class Project {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public List<Student> getStudents() {
+        return students;
+    }
+
+    public void setStudents(List<Student> students) {
+        this.students = students;
+    }
+
+    public void addStudent(Student student) throws Exception {
+        if(getStudents().size() < getStudentLimit()){
+            this.students.add(student);
+        } else {
+            throw new Exception("Project is full");
+        }
+    }
+
+    public List<Prof> getProfs() {
+        return profs;
+    }
+
+    public void setProfs(List<Prof> profs) {
+        this.profs = profs;
+    }
+
+    public void addProf(Prof prof) {
+        this.profs.add(prof);
     }
 }
