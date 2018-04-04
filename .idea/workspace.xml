@@ -2,30 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c89cb641-87ea-4a4b-bd90-0d869a7f28fb" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_common_hibernate_commons_annotations_5_0_1_Final.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_hibernate_core_5_2_14_Final.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_javax_persistence_hibernate_jpa_2_1_api_1_0_0_Final.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_javassist_javassist_3_22_0_GA.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_jandex_2_0_3_Final.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_logging_jboss_logging_3_3_0_Final.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_test_unknown.xml" afterPath="" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/.travis.yml" afterPath="$PROJECT_DIR$/.travis.yml" />
       <change beforePath="$PROJECT_DIR$/_4thYearPMS.iml" afterPath="$PROJECT_DIR$/_4thYearPMS.iml" />
       <change beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sysc4806/MainController.java" afterPath="$PROJECT_DIR$/src/main/java/sysc4806/MainController.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sysc4806/MvcConfig.java" afterPath="$PROJECT_DIR$/src/main/java/sysc4806/MvcConfig.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sysc4806/ProfController.java" afterPath="$PROJECT_DIR$/src/main/java/sysc4806/ProfController.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sysc4806/ProfRepo.java" afterPath="$PROJECT_DIR$/src/main/java/sysc4806/ProfRepo.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sysc4806/ProgramRepo.java" afterPath="$PROJECT_DIR$/src/main/java/sysc4806/ProgramRepo.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sysc4806/ProjectRepo.java" afterPath="$PROJECT_DIR$/src/main/java/sysc4806/ProjectRepo.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sysc4806/StudentRepo.java" afterPath="$PROJECT_DIR$/src/main/java/sysc4806/StudentRepo.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/deadline.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/deadline.html" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/event.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/event.html" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/home.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/home.html" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/projectSelection.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/projectSelection.html" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/studentHomepage.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/studentHomepage.html" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -91,7 +71,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="330">
-              <caret line="22" column="62" lean-forward="true" selection-start-line="22" selection-start-column="62" selection-end-line="22" selection-end-column="62" />
+              <caret line="22" column="62" lean-forward="false" selection-start-line="22" selection-start-column="62" selection-end-line="22" selection-end-column="62" />
               <folding />
             </state>
           </provider>
@@ -131,7 +111,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="home.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="129" column="0" lean-forward="false" selection-start-line="129" selection-start-column="0" selection-end-line="129" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="home.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/templates/home.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="135">
@@ -242,7 +232,6 @@
         <option value="$PROJECT_DIR$/src/main/java/sysc4806/RoleRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/sysc4806/User.java" />
         <option value="$PROJECT_DIR$/src/main/java/sysc4806/UserRepository.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/src/main/java/LoginController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/register.html" />
@@ -264,6 +253,7 @@
         <option value="$PROJECT_DIR$/src/main/resources/templates/projectSelection.html" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/studentHomepage.html" />
         <option value="$PROJECT_DIR$/.travis.yml" />
+        <option value="$PROJECT_DIR$/pom.xml" />
       </list>
     </option>
   </component>
@@ -801,7 +791,7 @@
       <updated>1520902079293</updated>
       <workItem from="1522161627402" duration="1450000" />
       <workItem from="1522188471906" duration="1759000" />
-      <workItem from="1522190239223" duration="18701000" />
+      <workItem from="1522190239223" duration="19248000" />
     </task>
     <task id="LOCAL-00001" summary="added UI files">
       <created>1521665933054</created>
@@ -912,7 +902,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29924000" />
+    <option name="totallyTimeSpent" value="30471000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1086,14 +1076,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="75" column="21" lean-forward="false" selection-start-line="75" selection-start-column="21" selection-end-line="75" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/sysc4806/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
@@ -1187,7 +1169,7 @@
         <state relative-caret-position="428">
           <caret line="39" column="55" lean-forward="true" selection-start-line="39" selection-start-column="55" selection-end-line="39" selection-end-column="55" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1229,7 +1211,7 @@
         <state relative-caret-position="151">
           <caret line="16" column="14" lean-forward="true" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1365,7 +1347,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
-          <caret line="22" column="62" lean-forward="true" selection-start-line="22" selection-start-column="62" selection-end-line="22" selection-end-column="62" />
+          <caret line="22" column="62" lean-forward="false" selection-start-line="22" selection-start-column="62" selection-end-line="22" selection-end-column="62" />
           <folding />
         </state>
       </provider>
@@ -1390,6 +1372,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="17" column="32" lean-forward="false" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="129" column="0" lean-forward="false" selection-start-line="129" selection-start-column="0" selection-end-line="129" selection-end-column="0" />
           <folding />
         </state>
       </provider>
