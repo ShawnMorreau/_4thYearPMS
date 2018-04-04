@@ -12,9 +12,8 @@ addons:
       - mysql-client
 dist: trusty
 sudo: required
-before_script:
+before_install:
   - mysql_upgrade
-  - mysql -e 'drop sysc;'
   - mysql -e 'create database sysc;'
   - mysql -e "create user 'user'@'localhost' identified by 'password';"
   - mysql -e "grant all on sysc.* to 'user'@'localhost';"
