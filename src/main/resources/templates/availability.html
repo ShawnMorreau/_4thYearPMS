@@ -359,12 +359,18 @@
             <li><a href="#">Deadlines</a></li>        </ul>
     </div>
 </nav>
-<input type="text" id="datep" />
-<div id="datepicker">
 
+<header>Select the times you are not available:</header>
 
-</div>
+    <div>
+        <input type="text" id="datep" />
+        <div id="datepicker"></div>
+        <textarea disabled id='selected'></textarea>
+        <input type="submit" value="submit">
+    </div>
+
 <script>
+
 
     var $datePicker = $("div#datepicker");
 
@@ -379,7 +385,7 @@
             setTimeout(function() {
                 $datePicker
                     .find('.ui-datepicker-current-day').parent().after(
-                        '<tr><td colspan="4"><div  class="grid-container">' +
+                    '<tr><td colspan="4"><div  class="grid-container">' +
                     '<button class="grid-container" id="slot1">8 am – 9 am</button></div>' +
                     '<button class="grid-container" id="slot2">9 am – 10 am</button></div>' +
                     '<button class="grid-container" id="slot3">10 am – 11 am</button></div>' +
@@ -393,7 +399,6 @@
 
             });
         });
-
 
 
 </script>
