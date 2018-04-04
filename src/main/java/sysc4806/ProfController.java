@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 
 
@@ -36,6 +37,9 @@ public class ProfController {
     @GetMapping(path="/project/add")
     public @ResponseBody String addNewProject (@RequestParam Long profId, @RequestParam String title, @RequestParam String description, @RequestParam String programs, @RequestParam int maxStudents) {
         Optional<Prof> op = profRepo.findById(profId);
+        System.out.println("Number of Profs: " + profRepo.count());
+        profRepo.findAll().forEach(prof -> System.out.println(prof.getId()));
+        System.out.println("Profs: " + profRepo.findAll());
         if(op.isPresent()){
             Prof prof = op.get();
             Project p = new Project(title, description, programs, maxStudents);
@@ -52,6 +56,13 @@ public class ProfController {
     @GetMapping(path="/all")
     public @ResponseBody Iterable<Prof> getAllProfs() {
         return profRepo.findAll();
+    }
+
+    @GetMapping(path="/deleteAll")
+    public @ResponseBody String deleteAllProjects () {
+        profRepo.deleteAll();
+//        projectRepo.findAll().forEach(project -> projectRepo.delete(project));
+        return "Delete All";
     }
 
     @GetMapping(path="/test")
