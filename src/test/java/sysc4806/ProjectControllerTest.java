@@ -39,25 +39,16 @@ public class ProjectControllerTest {
     String actualProject;
     private static final String url = "jdbc:mysql://localhost:3306/sysc";
     Connection conn = null;
-    String resetProf = "";
     Statement st = null;
-//    int rs = 0;
 
 
     @Before
     public void setUp() throws Exception {
-//        String clearProfs = this.testRestTemplate.getForObject("/prof/deleteAll", String.class);
-//        String clearProjects = this.testRestTemplate.getForObject(deleteAllProjectsURL, String.class);
 
         actualProf = this.testRestTemplate.getForObject("/prof/add?name=ProfTest&email=profemail@carleton.ca", String.class);
         actualProject = this.testRestTemplate.getForObject("/prof/project/add?profId=1&title=TestProject&description=thisIsATestYouWillPass&programs=SE,CS&maxStudents=2", String.class);
         System.out.println(actualProf);
         System.out.println(actualProject);
-
-//        while(rs.next()){
-//            int id = rs.getInt("id");
-//            System.out.format("%s\n", id);
-//        }
     }
 
     @After
@@ -66,10 +57,24 @@ public class ProjectControllerTest {
         System.out.println(clearProfs);
         String clearProjects = this.testRestTemplate.getForObject(deleteAllProjectsURL, String.class);
         System.out.println(clearProjects);
+
         conn = DriverManager.getConnection(url, "root", "");
-        resetProf = "ALTER TABLE PROF AUTO_INCREMENT = 1";
+
+        resetProfTable();
+        resetProjectTable();
+    }
+
+    public void resetProfTable() throws SQLException {
+
+        String resetProf = "ALTER TABLE PROF AUTO_INCREMENT = 1";
         st = conn.createStatement();
         st.executeUpdate(resetProf);
+    }
+
+    public void resetProjectTable() throws SQLException {
+        String resetProj = "ALTER TABLE PROJECT AUTO_INCREMENT = 1";
+        st = conn.createStatement();
+        st.executeUpdate(resetProj);
     }
 
 
