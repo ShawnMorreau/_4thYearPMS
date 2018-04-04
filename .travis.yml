@@ -18,9 +18,9 @@ before_script:
   - mysql -e "create user 'user'@'localhost' identified by 'password';"
   - mysql -e "grant all on sysc.* to 'user'@'localhost';"
 
-  - mysql -e "insert into `role` values (1, "ADMIN");"
-  - mysql -e "insert into `role` values (2, "PROFESSOR");"
-  - mysql -e "insert into `role` values (1, "STUDENT");"
+  - mysql -e "insert into `role` values (1, 'ADMIN');"
+  - mysql -e "insert into `role` values (2, 'PROFESSOR');"
+  - mysql -e "insert into `role` values (1, 'STUDENT');"
 
 
 deploy:
