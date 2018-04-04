@@ -32,7 +32,7 @@ public class ProfControllerTest {
     private static final String url = "jdbc:mysql://localhost:3306/sysc";
     Connection conn = null;
     Statement st = null;
-    
+
     @Before
     public void setUp() throws Exception {
     }
@@ -56,22 +56,22 @@ public class ProfControllerTest {
 
     public void resetProfTable() throws SQLException {
 
-        String resetProf = "ALTER TABLE PROF AUTO_INCREMENT = 1";
+        String resetProf = "alter table prof auto_increment = 1";
         st = conn.createStatement();
         st.executeUpdate(resetProf);
     }
 
     public void resetProjectTable() throws SQLException {
-        String resetProj = "ALTER TABLE PROJECT AUTO_INCREMENT = 1";
+        String resetProj = "alter table project auto_increment = 1";
         st = conn.createStatement();
         st.executeUpdate(resetProj);
     }
 
-    public void resetStudentTable() throws SQLException {
-        String resetStudent = "ALTER TABLE PROJECT AUTO_INCREMENT = 1";
-        st = conn.createStatement();
-        st.executeUpdate(resetStudent);
-    }
+//    public void resetStudentTable() throws SQLException {
+//        String resetStudent = "ALTER TABLE PROJECT AUTO_INCREMENT = 1";
+//        st = conn.createStatement();
+//        st.executeUpdate(resetStudent);
+//    }
 
     @Test
     public void addProf() throws Exception {
