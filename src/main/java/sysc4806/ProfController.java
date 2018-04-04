@@ -1,31 +1,33 @@
 package sysc4806;
 
-import java.util.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
-
+/**
+ * Created by CraigBook on 2018-03-21.
+ */
 @Controller
 @RequestMapping(path="/prof")
 public class ProfController {
-
     @Autowired
     private ProfRepo profRepo;
 
     @GetMapping(path="/add")
-    public @ResponseBody String addNewStudent (@RequestParam String name, @RequestParam String email, @RequestParam String program) {
+    public @ResponseBody
+    String addNewStudent (@RequestParam String name) {
         // @ResponseBody means the returned String is the response, not a view name
         // @RequestParam means it is a parameter from the GET or POST request
 
         Prof s = new Prof();
         s.setName(name);
         profRepo.save(s);
-        return "Saved Student";
+        return "Saved: " + name;
     }
 
-    @CrossOrigin(origins = "http://localhost:8080")
     @GetMapping(path="/all")
     public @ResponseBody Iterable<Prof> getAllStudents() {
         // This returns a JSON or XML with the users
