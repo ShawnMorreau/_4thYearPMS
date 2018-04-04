@@ -1,5 +1,8 @@
 package sysc4806;
 
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import org.assertj.core.api.BooleanArrayAssert;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -9,10 +12,12 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -43,15 +48,15 @@ public class StudentControllerTest {
         System.out.println(clearProfs);
         String clearProjects = this.testRestTemplate.getForObject(deleteAllProjectsURL, String.class);
         System.out.println(clearProjects);
-//        String clearStudents = this.testRestTemplate.getForObject(deleteAllStudentsURL, String.class);
-//        System.out.println(clearStudents);
+        String clearStudents = this.testRestTemplate.getForObject(deleteAllStudentsURL, String.class);
+        System.out.println(clearStudents);
 
 
         conn = DriverManager.getConnection(url, "root", "");
 
         resetProfTable();
         resetProjectTable();
-//        resetStudentTable();
+        resetStudentTable();
     }
 
     public void resetProfTable() throws SQLException {
@@ -67,11 +72,11 @@ public class StudentControllerTest {
         st.executeUpdate(resetProj);
     }
 
-//    public void resetStudentTable() throws SQLException {
-//        String resetStudent = "ALTER TABLE PROJECT AUTO_INCREMENT = 1";
-//        st = conn.createStatement();
-//        st.executeUpdate(resetStudent);
-//    }
+    public void resetStudentTable() throws SQLException {
+        String resetStudent = "alter table student auto_increment = 1";
+        st = conn.createStatement();
+        st.executeUpdate(resetStudent);
+    }
 
     @Test
     public void addNewStudent() throws Exception {
@@ -91,6 +96,43 @@ public class StudentControllerTest {
         assertThat(s.getEmail()).isNotEmpty();
         assertThat(s.getProgram()).isNotEmpty();
         assertThat(s.toString()).isNotEmpty();
+    }
+
+    @Test
+    public void getAllStudents() throws IOException {
+        String actual = this.testRestTemplate.getForObject("/student/add?name=JaspreetSanghra&email=jaspreet@gmail.com&program=SE", String.class);
+        String expected = "Saved Student";
+        assertThat(actual).isEqualTo(expected);
+        String actual1 = this.testRestTemplate.getForObject("/student/add?name=CraigIsesele&email=craigisesele@gmail.com&program=SE", String.class);
+        String expected1 = "Saved Student";
+        assertThat(actual).isEqualTo(expected);
+        String studentList = this.testRestTemplate.getForObject("/student/all", String.class);
+        assertThat(studentList).isNotNull();
+        List<Project> students = new ObjectMapper().readValue(studentList, new TypeReference<List<Student>>() {});
+        assertThat(students.size()).isEqualTo(2);
+        assertThat(students).isNotNull();
+    }
+
+    @Test
+    public void deleteAllStudents() throws Exception{
+//        Add some students
+        String actual = this.testRestTemplate.getForObject("/student/add?name=JaspreetSanghra&email=jaspreet@gmail.com&program=SE", String.class);
+        String expected = "Saved Student";
+        assertThat(actual).isEqualTo(expected);
+        String actual1 = this.testRestTemplate.getForObject("/student/add?name=CraigIsesele&email=craigisesele@gmail.com&program=SE", String.class);
+        String expected1 = "Saved Student";
+        assertThat(actual).isEqualTo(expected);
+//        Check if new students are in repo
+        String studentList = this.testRestTemplate.getForObject("/student/all", String.class);
+        assertThat(studentList).isNotNull();
+        List<Project> students = new ObjectMapper().readValue(studentList, new TypeReference<List<Student>>() {});
+        assertThat(students.size()).isEqualTo(2);
+        assertThat(students).isNotNull();
+//        Check if they're all removed
+        String deletedString = this.testRestTemplate.getForObject("/student/deleteAll", String.class );
+        assertThat(deletedString).isNotNull();
+        assertThat(deletedString).isEqualTo("deleted all students");
+
     }
 
     @Test
