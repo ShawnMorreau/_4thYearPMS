@@ -1,9 +1,8 @@
 package sysc4806;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import javax.persistence.*;
 import java.util.*;
 /*
 *
@@ -14,23 +13,25 @@ import java.util.*;
 public class Prof {
 
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Long id;
 
     private String name;
+    private String email;
+
+    @JsonIgnore
+    @ManyToMany(cascade=CascadeType.ALL, mappedBy="profs")
+    private List<Project> projects;
 
     public Prof() {
-        this("");
+        this("", "");
     }
 
-    public Prof(String name) {
+    public Prof(String name, String email) {
         this.name = name;
+        this.email = email;
+        this.projects = new ArrayList<Project>();
     }
-
-    /*public Prof(ProjectRepo_ project_repo) {
-        this.project_repo = project_repo;
-        project_repo.addProf(this);
-    }*/
 
     public Long getId() {
         return id;
@@ -47,17 +48,24 @@ public class Prof {
     public void setName(String name) {
         this.name = name;
     }
-/*
-    public void addProject(String title, String description, String programs, int studentLimit) {
-        Project project_ = new Project(title, description, programs, studentLimit);
 
+    public String getEmail() {
+        return email;
     }
 
-    public void deleteProject(Project project_){
-
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public void archiveProject(Project project_){
-        project_repo.archiveProject(project_);
-    }*/
+    public List<Project> getProjects() {
+        return projects;
+    }
+
+    public void setProjects(List<Project> projects) {
+        this.projects = projects;
+    }
+
+    public void addProject(Project project) {
+        this.projects.add(project);
+    }
 }

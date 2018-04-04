@@ -18,11 +18,7 @@ public class ProjectController {
 
     @GetMapping(path="/add")
     public @ResponseBody String addNewProject (@RequestParam String title, @RequestParam String description, @RequestParam String programs, @RequestParam int maxStudents) {
-        // @ResponseBody means the returned String is the response, not a view name
-        // @RequestParam means it is a parameter from the GET or POST request
-
         Project p = new Project();
-        //List<String> programList = Arrays.asList(programs.split("\\s*,\\s*"));
         p.setTitle(title);
         p.setDescription(description);
         p.setStudentLimit(maxStudents);
@@ -31,33 +27,43 @@ public class ProjectController {
         return "Saved project";
     }
 
+    @GetMapping(path="/getById")
+    public @ResponseBody
+    Optional<Project> getProjectById (@RequestParam long id) {
+        return projectRepo.findById(id);
+    }
+
+    @GetMapping(path="/getStudents")
+    public @ResponseBody
+    List<Student> getStudents (@RequestParam long id) {
+        Optional<Project> op =  projectRepo.findById(id);
+        if(op.isPresent()){
+            Project p = op.get();
+            return p.getStudents();
+        }else{
+            return null;
+        }
+    }
+
     @GetMapping(path="/deleteById")
     public @ResponseBody String deleteProjectById (@RequestParam long id) {
-        // @ResponseBody means the returned String is the response, not a view name
-        // @RequestParam means it is a parameter from the GET or POST request
-
         projectRepo.deleteById(id);
         return "DeleteId";
     }
 
     @GetMapping(path="/deleteAll")
     public @ResponseBody String deleteAllProjects () {
-        // @ResponseBody means the returned String is the response, not a view name
-        // @RequestParam means it is a parameter from the GET or POST request
-
-        projectRepo.deleteAll();
+        projectRepo.findAll().forEach(project -> projectRepo.delete(project));
         return "Delete All";
     }
 
     @GetMapping(path="/all")
     public @ResponseBody Iterable<Project> getAllStudents() {
-        // This returns a JSON or XML with the users
         return projectRepo.findAll();
     }
 
     @GetMapping(path="/test")
     public @ResponseBody String returnHello() {
-        // This returns a JSON or XML with the users
         return "Welcome to Project Page";
     }
 }
