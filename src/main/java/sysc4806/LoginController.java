@@ -7,8 +7,10 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 
@@ -18,6 +20,9 @@ public class LoginController {
     @Autowired
     private UserService userService;
 
+    @Autowired
+    private UserRepository userRepo;
+
     @RequestMapping(value={ "/login"}, method = RequestMethod.GET)
     public ModelAndView login(){
         ModelAndView modelAndView = new ModelAndView();
@@ -26,16 +31,21 @@ public class LoginController {
     }
 
 
-    @RequestMapping(value="/admin/registration", method = RequestMethod.GET)
+    @RequestMapping(value="/registration", method = RequestMethod.GET)
     public ModelAndView registration(){
         ModelAndView modelAndView = new ModelAndView();
         User user = new User();
         modelAndView.addObject("user", user);
-        modelAndView.setViewName("/admin/register");
+        modelAndView.setViewName("register");
         return modelAndView;
     }
+    @GetMapping(value="/all")
+    public @ResponseBody Iterable<User> getAllUsers() {
+        // This returns a JSON or XML with the users
+        return userRepo.findAll();
+    }
 
-    @RequestMapping(value = "/admin/registration", method = RequestMethod.POST)
+    @RequestMapping(value = "/registration", method = RequestMethod.POST)
     public ModelAndView createNewUser(@Valid User user, BindingResult bindingResult) {
         ModelAndView modelAndView = new ModelAndView();
         User userExists = userService.findUserByEmail(user.getEmail());
@@ -45,12 +55,12 @@ public class LoginController {
                             "There is already a user registered with the email provided");
         }
         if (bindingResult.hasErrors()) {
-            modelAndView.setViewName("admin/register");
+            modelAndView.setViewName("register");
         } else {
             userService.saveUser(user);
             modelAndView.addObject("successMessage", "User has been registered successfully");
             modelAndView.addObject("user", new User());
-            modelAndView.setViewName("admin/register");
+            modelAndView.setViewName("register");
 
         }
         return modelAndView;

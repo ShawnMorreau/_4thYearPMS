@@ -1,5 +1,6 @@
 package sysc4806;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.*;
 
@@ -7,7 +8,7 @@ import org.springframework.boot.autoconfigure.*;
 public class Main {
     //it's here man
 
-    public boolean return0 () {
+    public boolean return0() {
         return false;
     }
 
@@ -21,3 +22,4 @@ public class Main {
     }
 
 }
+

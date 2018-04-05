@@ -1,5 +1,6 @@
 package sysc4806;
 
+import java.sql.SQLException;
 import java.util.Arrays;
 import java.util.HashSet;
 
@@ -21,10 +22,11 @@ public class UserServiceImpl implements UserService{
     public User findUserByEmail(String email) {
         return userRepository.findByEmail(email);
     }
+    Role role = new Role();
 
     @Override
-    public void saveUser(User user) {
-        user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
+    public void saveUser(User user){
+        user.setPassword(user.getPassword());
         user.setActive(1);
         Role userRole = roleRepository.findByRole("STUDENT");
         user.setRoles(new HashSet<Role>(Arrays.asList(userRole)));
