@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -5,7 +7,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Java Blog</title>
+    <title th:text="${pageTitle}"></title>
     <link rel="stylesheet" th:href="@{/css/main.css}" />
 </head>
 <body>
@@ -22,16 +24,19 @@
         </ul>
     </div>
 </nav>
-<h1>Deadlines</h1>
-<div class = "container-fluid" th:each="entry : ${entries}">
-    <h2 th:text="${entry.title}"></h2>
-    <p th:text="${entry.content}"></p>
-    <a class="btn btn-info" th:href="@{/entry/{id}(id = ${entry.id})}">edit</a>
-    <a class="btn btn-info" th:href="@{/entry/delete/{id}(id = ${entry.id})}">delete</a>
+<h1 th:text="${pageTitle}"></h1>
+<form method="post" th:action="${givenAction}">
+    <div>
+        <input name="title" type="text" placeholder="title" th:value="${givenTitle}" />
+    </div>
 
-</div>
-<div class="">
-    <a class="btn btn-info" href="/entry">New Post</a>
-</div>
+    <div id = "text-area">
+        <textarea style = "width:500px;height:300px;"name="content" type="text" placeholder="content" th:text="${givenContent}"></textarea>
+    </div>
+    <div>
+        <button type="submit">Post</button>
+    </div>
+</form>
 </body>
 </html>
+
