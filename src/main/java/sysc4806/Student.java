@@ -25,7 +25,7 @@ public class Student {
     private String program;
 
     @JsonIgnore
-    @ManyToOne
+    @ManyToOne(cascade={CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
     @JoinColumn(name="projectId")
     private Project project;
 

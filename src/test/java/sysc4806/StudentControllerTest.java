@@ -107,6 +107,7 @@ public class StudentControllerTest {
         assertThat(actual).isEqualTo(expected);
         String studentList = this.testRestTemplate.getForObject("/student/all", String.class);
         assertThat(studentList).isNotNull();
+        System.out.println(studentList);
         List<Project> students = new ObjectMapper().readValue(studentList, new TypeReference<List<Student>>() {});
         assertThat(students.size()).isEqualTo(2);
         assertThat(students).isNotNull();

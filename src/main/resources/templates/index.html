@@ -123,6 +123,32 @@
         };
     };
 
+    function fetchStudents(callback, append, id) {
+        let students = new Promise((resolve, reject) => {
+            let url = "";
+            if (window.location.hostname.indexOf("localhost") >= 0) {
+                url = 'http://localhost:8080/student/all';
+            } else {
+                url = '/student/all';
+            }
+
+            axios.get(url)
+                .then(function(response) {
+                    console.log(response.data);
+                    resolve(response.data);
+                })
+                .catch(function(error) {
+                    console.error("Error fetching students");
+                    console.log(error);
+                    reject(error);
+                });
+        }).then(function(result) {
+            callback(result, append, id);
+        });
+
+        return students;
+    }
+
     function fetchProjects(callback, append, id) {
         let projects = new Promise((resolve, reject) => {
             let url = "";
@@ -242,7 +268,7 @@
         //configure tables
         dt.config(['id', 'title', 'description', 'programs', 'studentLimit'], ['ID', 'Title', 'Description', 'Programs', 'Max allowed', 'Remove'], //set to null for field names instead of custom header names
             'There are no items to list...');
-        studentInfo.config(['s', 'sn', 'em', 'deg'], ['Name', 'Student Number', 'Email', 'Program'], 'There are no items to list...');
+        studentInfo.config(['name', 'studentId', 'email', 'program'], ['Name', 'Student Number', 'Email', 'Program'], 'There are no students...');
         //set global table
         if ($(`#${'projectTable'}`)) {
             table = dt;
@@ -251,7 +277,7 @@
         }
         //load tables
         fetchProjects(dt.load, true, 1);
-        studentInfo.load(dummyStudents, true, 2);
+        fetchStudents(studentInfo.load, true, 2);
 
 
         //Builds project row for table based on form data
