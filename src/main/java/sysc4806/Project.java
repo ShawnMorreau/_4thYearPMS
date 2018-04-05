@@ -25,7 +25,7 @@ public class Project {
     @OneToMany(targetEntity=Student.class, mappedBy="project", fetch=FetchType.LAZY)
     private List<Student> students;
 
-    @ManyToMany(cascade=CascadeType.ALL, mappedBy = "projects")
+    @ManyToMany(cascade={CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH}, mappedBy = "projects")
     @NotEmpty
     private List<Prof> profs;
 

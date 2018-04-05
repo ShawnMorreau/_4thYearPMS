@@ -164,8 +164,8 @@ public class ProjectControllerTest {
     }
     @Test
     public void returnHello() throws Exception {
-            String message = "Welcome to Project Page";
-            String body = this.testRestTemplate.getForObject(testURL, String.class);
-            assertThat(body).isEqualTo(message);
+        String message = "Welcome to Project Page";
+        String body = this.testRestTemplate.getForObject(testURL, String.class);
+        assertThat(body).isEqualTo(message);
     }
 }

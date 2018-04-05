@@ -59,8 +59,7 @@ public class ProjectController {
 
     @GetMapping(path="/deleteAll")
     public @ResponseBody String deleteAllProjects () {
-//        projectRepo.deleteAll();
-        projectRepo.findAll().forEach(project -> projectRepo.delete(project));
+        projectRepo.deleteAll();
         return "Delete All";
     }
 

@@ -106,7 +106,7 @@ public class ProfControllerTest {
 
         String actualProf1 = this.testRestTemplate.getForObject("/prof/add?name=ProfTest0&email=profemail0@carleton.ca", String.class);
         String expectedProf1 = "Saved Prof";
-        assertThat(actualProf).isEqualTo(expectedProf);
+        assertThat(actualProf1).isEqualTo(expectedProf1);
 
 //        Check if they've all been added to the appropriate table/repository
         String profList = this.testRestTemplate.getForObject("/prof/all", String.class);
@@ -115,11 +115,35 @@ public class ProfControllerTest {
 
         List<Prof> profs = new ObjectMapper().readValue(profList, new TypeReference <List<Prof>> () {});
         assertThat(profs).isNotEmpty();
+        assertThat(profs.size()).isEqualTo(2);
 
+        //add project by a prof
+        String actualProject = this.testRestTemplate.getForObject("/prof/project/add?profId=1&title=TestProject&description=thisIsATestYouWillPass&programs=SE,CS&maxStudents=2", String.class);
+        String expectedProjAdd = "Project added";
+        assertThat(actualProject).isNotNull();
+        assertThat(actualProject).isNotEmpty();
+        assertThat(actualProject).isEqualTo(expectedProjAdd);
+
+        //get all projects
+        String projectList = this.testRestTemplate.getForObject("/project/all", String.class);
+        assertThat(projectList).isNotNull();
+        List<Project> projects = new ObjectMapper().readValue(projectList, new TypeReference <List<Project>> () {});
+        assertThat(projects).isNotNull();
+        assertThat(projects.size()).isEqualTo(1);
+
+        //delete profs
         String deleted = this.testRestTemplate.getForObject("/prof/deleteAll", String.class);
         assertThat(deleted).isNotNull();
         assertThat(deleted).isNotEmpty();
         assertThat(deleted).isEqualTo("Delete All");
+
+        //profs gone, projects also deleted
+        String projectList2 = this.testRestTemplate.getForObject("/project/all", String.class);
+        assertThat(projectList2).isNotNull();
+        System.out.println(projectList2);
+        List<Project> projects2 = new ObjectMapper().readValue(projectList2, new TypeReference <List<Project>> () {});
+        assertThat(projects2).isNotNull();
+        assertThat(projects2.size()).isEqualTo(0);
     }
 
 
