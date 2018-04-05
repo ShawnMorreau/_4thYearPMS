@@ -113,12 +113,15 @@
     function check(form)/*function to check userid & password*/
     {
         /*the following code checkes whether the entered userid and password are matching*/
-        if(form.userid.value == "test" && form.pswrd.value == "test")
+        if(form.userid.value == "student" && form.pswrd.value == "test")
         {
 
             // window.open('/studentHomepage')/*opens the target page while Id & password matches*/
             window.open('/student', "_self") ;
 
+        }
+        else if (form.userid.value == "prof" && form.pswrd.value == "test"){
+            window.open('/index', "_self") ;
         }
         else
         {
