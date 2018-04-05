@@ -413,16 +413,48 @@
         <div id="datepicker"></div>
     </div>
         <textarea id='selected'></textarea>
-        <input type="submit" value="submit" onclick="submitAvailability()">
+        <input type="submit" value="submit" onclick="submitAvailability(1)">
 
 
 <script>
 
 
-    function submitAvailability() {
+    function submitAvailability(studentId) {
         //toDo
+        const a = $("#selected").val();
+        saveAvailability(a, 1, alert);
     }
 
+    function saveAvailability(availability, studentId, callback) {
+        let av = new Promise((resolve, reject) => {
+            let url = "";
+            if (window.location.hostname.indexOf("localhost") >= 0) {
+                url = `http://localhost:8080/student/setavailability?studentId=${studentId}&availability=${availability}`;
+            } else {
+                url = `/student/setavailability?studentId=${studentId}&availability=${availability}`;
+            }
+            axios.get(url)
+                .then(function(response) {
+                    resolve(response.data);
+                })
+                .catch(function(error) {
+                    callback("Availability could not be saved");
+                    console.error("Failed to save availability");
+                    console.log(error);
+                    reject(error);
+                });
+        }).then(function(result) {
+            if (result !== "Availability Saved") {
+                callback("Availability could not be saved");
+                console.error("Failed to save availability");
+                console.log(result);
+            } else {
+                alert("Thank you!");
+            }
+        });
+
+        return av;
+    }
 
     var $datePicker = $("div#datepicker");
 
