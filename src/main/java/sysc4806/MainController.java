@@ -44,4 +44,21 @@ public class MainController {
         return "fileSubmission";
     }
 
+    @GetMapping("/login" )
+    public String loginPage( ) {
+        return "login";
+    }
+
+    @GetMapping("/register" )
+    public String registrationPage( ) {
+        return "register";
+    }
+
+    @GetMapping("/access-denied" )
+    public String accessDeniedPage( ) {
+        return "access-denied";
+    }
+
+
+
 }
