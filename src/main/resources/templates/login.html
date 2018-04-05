@@ -114,12 +114,12 @@
         {
 
             // window.open('/studentHomepage')/*opens the target page while Id & password matches*/
-            window.location.href = '/student' ;
+            window.location = '/student' ;
 
         }
-        // else if (form.userid.value == "prof" && form.pswrd.value == "test"){
-        //     window.location.replace('/index') ;
-        // }
+         else if (form.userid.value == "prof" && form.pswrd.value == "test"){
+             window.location = '/index' ;
+         }
         else
         {
             // window.open('/access-denied')/* while Id & password don't match*/
