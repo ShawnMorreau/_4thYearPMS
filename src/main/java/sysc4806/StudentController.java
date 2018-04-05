@@ -71,8 +71,10 @@ public class StudentController {
     }
 
     @GetMapping(path="/deleteAll")
-    public @ResponseBody void deleteAllStudents() {
+    public @ResponseBody
+    String deleteAllStudents() {
         studentRepo.deleteAll();
+        return "deleted all students";
     }
 
     @GetMapping(path="/test")
