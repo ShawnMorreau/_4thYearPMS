@@ -118,13 +118,13 @@
             window.open('/student')/*opens the target page while Id & password matches*/
 
             // window.open('/studentHomepage')/*opens the target page while Id & password matches*/
-            window.location.href = '/student';
+            window.location.assign('/student');
 
         }
         else
         {
             // window.open('/access-denied')/* while Id & password don't match*/
-            window.location.href = 'access-denied';
+            window.location.assign('/access-denied');
         }
     }
 </script>
