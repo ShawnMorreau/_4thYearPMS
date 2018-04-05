@@ -20,7 +20,7 @@ public class ProfController {
     private ProjectRepo projectRepo;
 
     @GetMapping(path="/add")
-    public @ResponseBody String addNewStudent (@RequestParam String name, @RequestParam String email) {
+    public @ResponseBody String addProf (@RequestParam String name, @RequestParam String email) {
         Prof s = new Prof();
         s.setName(name);
         s.setEmail(email);
@@ -59,7 +59,7 @@ public class ProfController {
     }
 
     @GetMapping(path="/deleteAll")
-    public @ResponseBody String deleteAllProjects () {
+    public @ResponseBody String deleteAllProfs() {
         profRepo.deleteAll();
 //        projectRepo.findAll().forEach(project -> projectRepo.delete(project));
         return "Delete All";
