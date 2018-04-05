@@ -22,6 +22,8 @@ public class Project {
     private String programs;
     private int studentLimit;
 
+    private byte[] file;
+
     @OneToMany(cascade={CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH}, targetEntity=Student.class, mappedBy="project", fetch=FetchType.LAZY)
     private List<Student> students;
 
@@ -117,5 +119,13 @@ public class Project {
 
     public void addProf(Prof prof) {
         this.profs.add(prof);
+    }
+
+    public byte[] getFile() {
+        return file;
+    }
+
+    public void setFile(byte[] file) {
+        this.file = file;
     }
 }
