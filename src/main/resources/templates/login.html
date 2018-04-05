@@ -100,8 +100,8 @@
     </div>
 
     <div class="container" style="background-color:#f1f1f1">
-        <button type="button" class="cancelbtn">Cancel</button>
         <button href ="/register" type="button" class="registerBtn">Register</button>
+        <button type="button" class="cancelbtn">Cancel</button>
         <span class="psw">Forgot <a href="#">password?</a></span>
     </div>
 </form>
@@ -119,13 +119,13 @@
             window.open('/student')/*opens the target page while Id & password matches*/
 
             // window.open('/studentHomepage')/*opens the target page while Id & password matches*/
-            window.location.replace('/student') ;
+            window.open('/student', "_self") ;
 
         }
         else
         {
             // window.open('/access-denied')/* while Id & password don't match*/
-            window.location.replace('/access-denied');
+            window.open('/access-denied', "_self");
         }
     }
 </script>
