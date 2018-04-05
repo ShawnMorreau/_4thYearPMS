@@ -169,9 +169,9 @@ function addProject(data, callback) {
     let addProject = new Promise((resolve, reject) => {
         let url = "";
         if (window.location.hostname.indexOf("localhost") >= 0) {
-            url = `http://localhost:8080/project/add?title=${data.title}&description=${data.description}&programs=${data.programs}&maxStudents=${data.studentLimit}&`;
+            url = `http://localhost:8080/prof/project/add?profId=1&title=${data.title}&description=${data.description}&programs=${data.programs}&maxStudents=${data.studentLimit}&`;
         } else {
-            url = `/project/add?title=${data.title}&description=${data.description}&programs=${data.programs}&maxStudents=${data.studentLimit}&`;
+            url = `/prof/project/add?profId=1&title=${data.title}&description=${data.description}&programs=${data.programs}&maxStudents=${data.studentLimit}&`;
         }
         axios.get(url)
             .then(function (response) {

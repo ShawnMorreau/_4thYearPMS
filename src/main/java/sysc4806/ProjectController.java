@@ -33,6 +33,21 @@ public class ProjectController {
         return projectRepo.findById(id);
     }
 
+    @PostMapping(path="/upload")
+    public @ResponseBody String uploadFile (@RequestBody long projectId, @RequestBody String file) {
+        Optional<Project> op =  projectRepo.findById(projectId);
+        System.out.println("HEERRRE");
+        if(op.isPresent()){
+            Project p = op.get();
+            p.setFile(file.getBytes());
+            System.out.println(file);
+            projectRepo.save(p);
+            return "Success";
+        }else{
+            return "Fail";
+        }
+    }
+
     @GetMapping(path="/student/get")
     public @ResponseBody
     List<Student> getStudents (@RequestParam long id) {
