@@ -71,7 +71,19 @@
 </head>
 <body>
 
-
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/">4th Year PMS</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li><a href="/home">Home</a></li>
+            <li class="active"><a href="#">Projects</a></li>
+            <li><a href="events">Events</a></li>
+            <li><a href="#">Deadlines</a></li>
+        </ul>
+    </div>
+</nav>
 
 <form>
     <div class="container">
@@ -102,11 +114,11 @@
         /*the following code checkes whether the entered userid and password are matching*/
         if(form.userid.value == "test" && form.pswrd.value == "test")
         {
-            window.open('/index.html')/*opens the target page while Id & password matches*/
+            window.open('/studentHomepage.html')/*opens the target page while Id & password matches*/
         }
         else
         {
-            alert("Error Password or Username")/*displays error message*/
+            window.open('/access-denied')/* while Id & password don't match*/
         }
     }
 </script>
