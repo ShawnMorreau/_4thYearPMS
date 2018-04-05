@@ -1,39 +1,38 @@
-.h1{
-
-color: red;
+.grid-container {
+    display: inline-grid;
+    grid-template-columns: auto auto auto;
 }
 
-.grid-container{
-display: inline-grid;
-grid-template-columns: auto auto auto;
+.grid-item {
+    padding: 10px;
 }
 
-.grid-item{
-padding: 10px;
-}
-thead{
-background-color: #8CCCF1;
-border: 1px solid black;
+thead {
+    background-color: #8CCCF1;
+    border: 1px solid black;
 
 }
 
-th{
-height: 40px;
-border: 1px solid black;
-text-align: center;
+th {
+    height: 40px;
+    border: 1px solid black;
+    text-align: center;
 
 }
 
-table{
-width: 100%;
-border: 1px solid black;
+table {
+    width: 100%;
+    border: 1px solid black;
 
 }
 
 
-.studentContainer{
+.studentContainer {
 
     padding: 25px;
 }
 
+.form-group{
 
+    width: 50%;
+}
