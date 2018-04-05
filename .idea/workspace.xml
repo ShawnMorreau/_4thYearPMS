@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c89cb641-87ea-4a4b-bd90-0d869a7f28fb" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/_4thYearPMS.iml" afterPath="$PROJECT_DIR$/_4thYearPMS.iml" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/deadline.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/deadline.html" />
+      <change beforePath="$PROJECT_DIR$/.travis.yml" afterPath="$PROJECT_DIR$/.travis.yml" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -45,7 +41,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Entry.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Entry.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/sysc4806/Entry.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="240">
@@ -56,6 +52,16 @@
                 <element signature="e#614#615#0" expanded="true" />
                 <element signature="e#648#649#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".travis.yml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.travis.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="22" column="16" lean-forward="false" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="16" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -203,7 +209,6 @@
         <option value="$PROJECT_DIR$/src/main/java/sysc4806/ProfRepo.java" />
         <option value="$PROJECT_DIR$/src/main/java/sysc4806/ProfController.java" />
         <option value="$PROJECT_DIR$/src/main/java/sysc4806/StudentController.java" />
-        <option value="$PROJECT_DIR$/.travis.yml" />
         <option value="$PROJECT_DIR$/src/test/java/sysc4806/SwapPagesTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/sysc4806/MainControllerTest.java" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/event.html" />
@@ -221,6 +226,7 @@
         <option value="$PROJECT_DIR$/src/main/resources/templates/deadline.html" />
         <option value="$PROJECT_DIR$/src/main/java/sysc4806/EntryController.java" />
         <option value="$PROJECT_DIR$/src/main/java/sysc4806/Entry.java" />
+        <option value="$PROJECT_DIR$/.travis.yml" />
       </list>
     </option>
   </component>
@@ -726,7 +732,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1520902079293</updated>
-      <workItem from="1522904154833" duration="10532000" />
+      <workItem from="1522904154833" duration="10677000" />
     </task>
     <task id="LOCAL-00001" summary="added UI files">
       <created>1521665933054</created>
@@ -837,7 +843,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17400000" />
+    <option name="totallyTimeSpent" value="17545000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="877" extended-state="0" />
@@ -972,13 +978,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3345">
           <caret line="223" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="229" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.travis.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="22" column="14" lean-forward="false" selection-start-line="22" selection-start-column="14" selection-end-line="22" selection-end-column="14" />
         </state>
       </provider>
     </entry>
@@ -1278,6 +1277,14 @@
             <element signature="e#614#615#0" expanded="true" />
             <element signature="e#648#649#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.travis.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="16" lean-forward="false" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="16" />
+          <folding />
         </state>
       </provider>
     </entry>
