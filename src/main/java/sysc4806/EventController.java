@@ -50,7 +50,7 @@ public class EventController {
         model.addAttribute("givenAction", "/entry/" + eventId);
         model.addAttribute("givenTitle", entry.get().getTitle());
         model.addAttribute("givenContent", entry.get().getContent());
-        return "eventEntry";
+        return "eventsEntry";
     }
 
     @RequestMapping(value = "/eventsEntry/{id}", method = RequestMethod.POST)
