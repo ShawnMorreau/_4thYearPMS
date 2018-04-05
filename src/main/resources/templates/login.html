@@ -107,25 +107,23 @@
 
 <script>
 
-    function check(form)/*function to check userid & password*/
-    {
+    function check(form)/*function to check userid & password*/ {
         /*the following code checkes whether the entered userid and password are matching*/
-        if(form.userid.value == "student" && form.pswrd.value == "test")
-        {
+        if (form.userid.value == "student" && form.pswrd.value == "test") {
 
-             window.open('/student')/*opens the target page while Id & password matches*/
-           // window.location = '/student' ;
+            window.open('/student')
+            /*opens the target page while Id & password matches*/
+            // window.location = '/student' ;
 
         }
-         else if (form.userid.value == "prof" && form.pswrd.value == "test"){
-           //  window.location = '/index' ;
-         }
-        else
-        {
+        else if (form.userid.value == "prof" && form.pswrd.value == "test") {
+            //  window.location = '/index' ;
+        }
+        else {
             // window.open('/access-denied')/* while Id & password don't match*/
             window.open('/access-denied', "_self");
         }
-
+    }
 
 
 </script>
