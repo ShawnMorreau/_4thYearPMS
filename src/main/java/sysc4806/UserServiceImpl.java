@@ -22,10 +22,10 @@ public class UserServiceImpl implements UserService{
     public User findUserByEmail(String email) {
         return userRepository.findByEmail(email);
     }
+    Role role = new Role();
 
     @Override
     public void saveUser(User user){
-
         user.setPassword(user.getPassword());
         user.setActive(1);
         Role userRole = roleRepository.findByRole("STUDENT");

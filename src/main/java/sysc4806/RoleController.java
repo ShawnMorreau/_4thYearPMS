@@ -20,10 +20,10 @@ public class RoleController {
         return roleRepository.findAll();
     }
     @GetMapping(path="/add")
-    public @ResponseBody String addNewRole ( @RequestParam String role) {
+    public @ResponseBody String addNewRole (@RequestParam int id, @RequestParam String role) {
 
         Role r = new Role();
-        //r.setId(id);
+        r.setId(id);
         r.setRole(role);
         roleRepository.save(r);
         return "Saved program";
