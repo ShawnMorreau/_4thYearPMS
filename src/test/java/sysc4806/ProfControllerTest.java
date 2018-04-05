@@ -46,7 +46,7 @@ public class ProfControllerTest {
         String clearProjects = this.testRestTemplate.getForObject(deleteAllProjectsURL, String.class);
         System.out.println(clearProjects);
 
-        conn = DriverManager.getConnection(url, "root", "");
+        conn = DriverManager.getConnection(url, "root", "password");
 
         resetProfTable();
         resetProjectTable();

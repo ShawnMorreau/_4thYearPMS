@@ -28,7 +28,7 @@ public class ProjectControllerTest {
     private static final String addNewProjectURL = "/project/add";
 
     private static final String getProjectByIdURL= "/project/getById";
-    private static final String getStudentsURL= "/project/getStudents";
+    private static final String getStudentsURL= "/project/student/get";
     private static final String getAllProjectsURL= "/project/all";
 
     private static final String deleteProjectByIdURL= "/project/deleteById";
@@ -58,7 +58,7 @@ public class ProjectControllerTest {
         String clearProjects = this.testRestTemplate.getForObject(deleteAllProjectsURL, String.class);
         System.out.println(clearProjects);
 
-        conn = DriverManager.getConnection(url, "root", "");
+        conn = DriverManager.getConnection(url, "root", "password");
 
         resetProfTable();
         resetProjectTable();
@@ -96,7 +96,7 @@ public class ProjectControllerTest {
 
     @Test
     public void getStudents() throws Exception {
-        String studentList = this.testRestTemplate.getForObject("/project/getStudents?id=1", String.class);
+        String studentList = this.testRestTemplate.getForObject("/project/student/get?id=1", String.class);
         assertThat(studentList).isNotNull();
         List<Student> students = new ObjectMapper().readValue(studentList, new TypeReference<List<Student>>(){});
         assertThat(students.size()).isEqualTo(0);

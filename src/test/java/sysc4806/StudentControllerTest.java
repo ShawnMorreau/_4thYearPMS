@@ -51,7 +51,7 @@ public class StudentControllerTest {
         System.out.println(clearStudents);
 
 
-        conn = DriverManager.getConnection(url, "root", "");
+        conn = DriverManager.getConnection(url, "root", "password");
 
         resetProfTable();
         resetProjectTable();
