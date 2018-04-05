@@ -19,7 +19,7 @@ public class ProfController {
     private ProjectRepo projectRepo;
 
     @GetMapping(path="/add")
-    public @ResponseBody String addNewStudent (@RequestParam String name, @RequestParam String email) {
+    public @ResponseBody String addProf (@RequestParam String name, @RequestParam String email) {
         Prof s = new Prof();
         s.setName(name);
         s.setEmail(email);
@@ -34,8 +34,11 @@ public class ProfController {
     }
 
     @GetMapping(path="/project/add")
-    public @ResponseBody String addNewProject (@RequestParam long profId, @RequestParam String title, @RequestParam String description, @RequestParam String programs, @RequestParam int maxStudents) {
+    public @ResponseBody String addNewProject (@RequestParam Long profId, @RequestParam String title, @RequestParam String description, @RequestParam String programs, @RequestParam int maxStudents) {
         Optional<Prof> op = profRepo.findById(profId);
+        System.out.println("Number of Profs: " + profRepo.count());
+        profRepo.findAll().forEach(prof -> System.out.println(prof.getId()));
+        System.out.println("Profs: " + profRepo.findAll());
         if(op.isPresent()){
             Prof prof = op.get();
             Project p = new Project(title, description, programs, maxStudents);
@@ -44,13 +47,21 @@ public class ProfController {
             projectRepo.save(p);
             return "Project added";
         }else{
+
             return "Prof not found";
         }
     }
 
     @GetMapping(path="/all")
-    public @ResponseBody Iterable<Prof> getAllStudents() {
+    public @ResponseBody Iterable<Prof> getAllProfs() {
         return profRepo.findAll();
+    }
+
+    @GetMapping(path="/deleteAll")
+    public @ResponseBody String deleteAllProfs() {
+        profRepo.deleteAll();
+//        projectRepo.findAll().forEach(project -> projectRepo.delete(project));
+        return "Delete All";
     }
 
     @GetMapping(path="/test")
