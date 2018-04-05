@@ -122,6 +122,34 @@
         };
     };
 
+    function handleSubmit(){
+        console.log("SUBMITTING");
+    }
+
+    function uploadFile(callback, file, projectId) {
+        let upload = new Promise((resolve, reject) => {
+            let url = "";
+            if (window.location.hostname.indexOf("localhost") >= 0) {
+                url = `http://localhost:8080/project/upload`;
+            } else {
+                url = `/project/upload`;
+            }
+
+            axios.post(url, {"projectId": `"${projectId}"`, "file": `"${file}"`}).then(function (response) {
+                console.log(response.data);
+                resolve(response.data);
+            }).catch(function (error) {
+                console.error("Error uploading files");
+                console.log(error);
+                reject(error);
+            });
+        }).then(function(result) {
+            callback(result);
+        });
+
+        return upload;
+    }
+
     function fetchStudents(callback, append, id) {
         let students = new Promise((resolve, reject) => {
             let url = "";
@@ -282,25 +310,23 @@
         //Builds project row for table based on form data
         $("form").submit(function(event) {
 
-            var title = document.getElementById('title').value;
-            var description = document.getElementById('description').value;
-            var checked = ' ';
-            var allowed = document.getElementById('studentLimit').value;
+            console.log("SUBMITTING");
 
-            $('input:checkbox[name=check]:checked').each(function() {
-                checked = checked + " " + ($(this).val());
-            });
+            console.log(document.getElementById('fileSumbission'));
 
-            var data = {
-                title: title,
-                description: description,
-                programs: checked,
-                studentLimit: allowed
+            let rd = document.getElementById('roughDraft');
+            console.log(rd);
+
+            var reader = new FileReader();
+            reader.onload = function() {
+                var arrayBuffer = reader.result;
+                console.log("DONE");
+                console.log(arrayBuffer);
+                uploadFile(alert, arrayBuffer, 1);
             };
-            dt.add(data);
+            console.log(rd.files[0]);
+            reader.readAsDataURL(rd.files[0]);
 
-
-            checked = ' ';
             return false;
         });
     });
