@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -21,13 +21,16 @@
         </ul>
     </div>
 </nav>
-<div style="border:2px inset #AAA;cursor:text;height:120px;overflow:auto;width:500px;">
-    <div style="width:800px;">
+<h1>Events</h1>
+<div class = "container-fluid" th:each="entry : ${events}">
+    <h2 th:text="${entry.title}"></h2>
+    <p th:text="${entry.content}"></p>
+    <a class="btn btn-info" th:href="@{/eventsEntry/{id}(id = ${entry.id})}">edit</a>
+    <a class="btn btn-info" th:href="@{/eventsEntry/delete/{id}(id = ${entry.id})}">delete</a>
 
-        Currently acts as a student page in which results will be shown here. Admins will have<br>
-        the ability to edit this page and have it update for students to see here.
-
-    </div>
+</div>
+<div class="">
+    <a class="btn btn-info" href="/eventsEntry">New Post</a>
 </div>
 
 </body>
