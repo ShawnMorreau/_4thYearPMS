@@ -45,6 +45,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
         http.
                 authorizeRequests()
+<<<<<<< HEAD
                 .antMatchers("/**").permitAll()
 //                .antMatchers("/home").permitAll()
 //                .antMatchers("/login").permitAll()
@@ -52,6 +53,15 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 //                .antMatchers("/all").permitAll()
 //                .antMatchers("/roles/**").permitAll()
 //                .antMatchers("/select").hasAnyAuthority("STUDENT","ADMIN","PROFESSOR")
+=======
+                .antMatchers("/").permitAll()
+                .antMatchers("/home").permitAll()
+                .antMatchers("/login").permitAll()
+                .antMatchers("/index").permitAll()
+                .antMatchers("/all").permitAll()
+                .antMatchers("/roles/**").permitAll()
+                .antMatchers("/select").hasAnyAuthority("STUDENT","ADMIN","PROFESSOR")
+>>>>>>> 073a86188342b37965377bd1b265a0d845769586
                 .antMatchers("/registration").permitAll().anyRequest()
                 .authenticated().and().csrf().disable().formLogin()
                 .loginPage("/login").failureUrl("/login?error=true")
