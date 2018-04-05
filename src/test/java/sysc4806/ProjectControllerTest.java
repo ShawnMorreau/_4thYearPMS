@@ -77,12 +77,6 @@ public class ProjectControllerTest {
         st.executeUpdate(resetProj);
     }
 
-//    public void resetStudentTable() throws SQLException {
-//        String resetStudent = "ALTER TABLE PROJECT AUTO_INCREMENT = 1";
-//        st = conn.createStatement();
-//        st.executeUpdate(resetStudent);
-//    }
-
     @Test
     public void addNewProject() throws Exception {
         assertThat(actualProf).isEqualTo("Saved Prof");

@@ -2,7 +2,6 @@ package sysc4806;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.assertj.core.api.BooleanArrayAssert;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;

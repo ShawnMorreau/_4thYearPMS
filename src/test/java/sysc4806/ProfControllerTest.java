@@ -30,7 +30,6 @@ public class ProfControllerTest {
 
     private static final String deleteAllProfsURL = "/prof/deleteAll";
     private static final String deleteAllProjectsURL= "/project/deleteAll";
-//    private static final String deleteAllStudentsURL= "/student/deleteAll";
 
     private static final String url = "jdbc:mysql://localhost:3306/sysc";
     Connection conn = null;
