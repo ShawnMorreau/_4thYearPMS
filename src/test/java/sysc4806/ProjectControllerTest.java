@@ -138,6 +138,14 @@ public class ProjectControllerTest {
 
     @Test
     public void deleteAllProjects() throws Exception {
+        //Verify nothing else was affected
+        String profList0= this.testRestTemplate.getForObject("/prof/all", String.class);
+        System.out.println(profList0);
+        assertThat(profList0).isNotNull();
+        List<Prof> profs0 = new ObjectMapper().readValue(profList0, new TypeReference <List<Prof>> () {});
+        assertThat(profs0).isNotEmpty();
+
+        //Delete projects
         String message = this.testRestTemplate.getForObject(deleteAllProjectsURL, String.class);
         assertThat(message).isEqualTo("Delete All");
 
@@ -146,7 +154,14 @@ public class ProjectControllerTest {
         List<Project> projects = new ObjectMapper().readValue(projectList, new TypeReference <List<Project>> () {});
         assertThat(projects.size()).isEqualTo(0);
         assertThat(projects).isNotNull();
-        }
+
+        //Verify nothing else was affected
+        String profList= this.testRestTemplate.getForObject("/prof/all", String.class);
+        System.out.println(profList);
+        assertThat(profList).isNotNull();
+        List<Prof> profs = new ObjectMapper().readValue(profList, new TypeReference <List<Prof>> () {});
+        assertThat(profs).isNotEmpty();
+    }
     @Test
     public void returnHello() throws Exception {
             String message = "Welcome to Project Page";

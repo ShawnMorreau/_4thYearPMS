@@ -20,7 +20,8 @@ public class Prof {
     private String email;
 
     @JsonIgnore
-    @ManyToMany(cascade=CascadeType.ALL, mappedBy="profs")
+    @ManyToMany(cascade=CascadeType.ALL)
+    @JoinTable(name="prof_project", joinColumns=@JoinColumn(name="profId"), inverseJoinColumns=@JoinColumn(name="projectId"))
     private List<Project> projects;
 
     public Prof() {
