@@ -114,11 +114,17 @@
         /*the following code checkes whether the entered userid and password are matching*/
         if(form.userid.value == "test" && form.pswrd.value == "test")
         {
+<<<<<<< HEAD
             window.open('/student')/*opens the target page while Id & password matches*/
+=======
+            // window.open('/studentHomepage')/*opens the target page while Id & password matches*/
+            window.location.href = '/student';
+>>>>>>> damanBranch3.0
         }
         else
         {
-            window.open('/access-denied')/* while Id & password don't match*/
+            // window.open('/access-denied')/* while Id & password don't match*/
+            window.location.href = 'access-denied';
         }
     }
 </script>
