@@ -58,7 +58,7 @@ public class ProjectControllerTest {
         String clearProjects = this.testRestTemplate.getForObject(deleteAllProjectsURL, String.class);
         System.out.println(clearProjects);
 
-        conn = DriverManager.getConnection(url, "root", "password");
+        conn = DriverManager.getConnection(url, "root", "");
 
         resetProfTable();
         resetProjectTable();
