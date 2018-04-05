@@ -321,6 +321,21 @@
     </style>
 
     <style>
+
+        #container{
+
+            display: inline;
+            float: left;
+
+        }
+        #selected{
+            resize: vertical;
+            height: 200px;
+            vertical-align:middle;
+            display: inline;
+            float: middle;
+        }
+
         #datep {
             display: none;
         }
@@ -330,6 +345,8 @@
             background: #5bacf7 url(images/ui-bg_glass_15_5bacf7_1x400.png) 50% 50% repeat-x;
             font-weight: normal;
             color: #1a1a1a;
+
+            
         }
 
         #addon {
@@ -340,7 +357,9 @@
         .grid-container{
             display: block;
 
+
         }
+
 
 
     </style>
@@ -363,43 +382,63 @@
 <header>Select the times you are not available:</header>
 
 
-    <div>
+    <div id="container">
         <input type="text" id="datep" />
         <div id="datepicker"></div>
-        <textarea disabled id='selected'></textarea>
-        <input type="submit" value="submit">
     </div>
+        <textarea id='selected'></textarea>
+        <input type="submit" value="submit">
+
 
 <script>
+
+
 
 
     var $datePicker = $("div#datepicker");
 
     var $datePicker = $("div");
 
+    var selectedDate = '';
 
     $( "#datepicker" ).datepicker({
         changeMonth: true,
         changeYear: true,
         inline: true,
+        dateFormat: "dd",
         altField: "#datep",}).change(function(e) {
+
+        var selected = $(this).val();
+        selectedDate = selected;
+
             setTimeout(function() {
                 $datePicker
                     .find('.ui-datepicker-current-day').parent().after(
                     '<tr><td colspan="4"><div  class="grid-container">' +
-                    '<button class="grid-container" id="slot1">8 am – 9 am</button></div>' +
-                    '<button class="grid-container" id="slot2">9 am – 10 am</button></div>' +
-                    '<button class="grid-container" id="slot3">10 am – 11 am</button></div>' +
-                    '<button class="grid-container" id="slot4">11 am – 12 pm</button></div>' +
-                    '<button class="grid-container" id="slot5">12 pm – 1 pm</button></div>' +
-                    '<button class="grid-container" id="slot6">1 pm – 2 pm</button></div>' +
-                    '<button class="grid-container" id="slot7">2 pm – 3 pm</button></div>' +
-                    '<button class="grid-container" id="slot8">3 pm – 4 pm</button></div>' +
-                    '<button class="grid-container" id="slot9">4 pm – 5 pm</button></div>' +
+                    '<button class="grid-container" onclick="availableSlot(this.id)" value="8-9" id="slot1">8 am – 9 am</button></div>' +
+                    '<button class="grid-container" onclick="availableSlot(this.id)" value="9-10"id="slot2">9 am – 10 am</button></div>' +
+                    '<button class="grid-container" onclick="availableSlot(this.id)" value="10-11"id="slot3">10 am – 11 am</button></div>' +
+                    '<button class="grid-container" onclick="availableSlot(this.id)" value="11-12"id="slot4">11 am – 12 pm</button></div>' +
+                    '<button class="grid-container" onclick="availableSlot(this.id)" value="12-1"id="slot5">12 pm – 1 pm</button></div>' +
+                    '<button class="grid-container" onclick="availableSlot(this.id)" value="1-2"id="slot6">1 pm – 2 pm</button></div>' +
+                    '<button class="grid-container" onclick="availableSlot(this.id)" value="2-3"id="slot7">2 pm – 3 pm</button></div>' +
+                    '<button class="grid-container" onclick="availableSlot(this.id)" value="3-4"id="slot8">3 pm – 4 pm</button></div>' +
+                    '<button class="grid-container" onclick="availableSlot(this.id)" value="4-5"id="slot9">4 pm – 5 pm</button></div>' +
                     '</td></tr>')
 
             });
         });
+
+
+    function availableSlot(id) {
+
+
+
+    document.getElementById("selected").value +=  selectedDate + " between " + document.getElementById(id).value + "\n";
+
+
+
+    }
 
 
 </script>
