@@ -24,8 +24,10 @@ public class Student {
     @NotEmpty
     private String program;
 
+    private String availability;
+
     @JsonIgnore
-    @ManyToOne
+    @ManyToOne(cascade={CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
     @JoinColumn(name="projectId")
     private Project project;
 
@@ -87,5 +89,13 @@ public class Student {
             project = getProject().getId().toString();
         }
         return String.format("Student Id:%d Name:%s Email:%s Program:%s Project:%s", getStudentId(), getName(), getEmail(), getProgram(), project);
+    }
+
+    public String getAvailability() {
+        return availability;
+    }
+
+    public void setAvailability(String availability) {
+        this.availability = availability;
     }
 }

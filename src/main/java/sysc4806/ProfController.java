@@ -60,7 +60,6 @@ public class ProfController {
     @GetMapping(path="/deleteAll")
     public @ResponseBody String deleteAllProfs() {
         profRepo.deleteAll();
-//        projectRepo.findAll().forEach(project -> projectRepo.delete(project));
         return "Delete All";
     }
 

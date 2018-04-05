@@ -33,13 +33,30 @@ public class ProjectController {
         return projectRepo.findById(id);
     }
 
-    @GetMapping(path="/getStudents")
+    @GetMapping(path="/student/get")
     public @ResponseBody
     List<Student> getStudents (@RequestParam long id) {
         Optional<Project> op =  projectRepo.findById(id);
         if(op.isPresent()){
             Project p = op.get();
             return p.getStudents();
+        }else{
+            return null;
+        }
+    }
+
+    @GetMapping(path="/student/emails")
+    public @ResponseBody
+    List<String> getStudentEmails (@RequestParam long projectId) {
+        Optional<Project> op =  projectRepo.findById(projectId);
+        if(op.isPresent()){
+            Project p = op.get();
+            List<Student> students = p.getStudents();
+            List<String> emails = new ArrayList<>(students.size());
+            for (Student student : students) {
+                emails.add(student.getEmail());
+            }
+            return emails;
         }else{
             return null;
         }

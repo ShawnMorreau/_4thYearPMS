@@ -65,6 +65,21 @@ public class StudentController {
         }
     }
 
+    @GetMapping(path="/setavailability")
+    public @ResponseBody
+    String getStudentById (@RequestParam long studentId, @RequestParam String availability) {
+        Optional<Student> s = studentRepo.findById(studentId);
+
+        if(s.isPresent()){
+            Student st = s.get();
+            st.setAvailability(availability);
+            studentRepo.save(st);
+            return "Availability Saved";
+        }else{
+            return "Not found";
+        }
+    }
+
     @GetMapping(path="/all")
     public @ResponseBody Iterable<Student> getAllStudents() {
         return studentRepo.findAll();

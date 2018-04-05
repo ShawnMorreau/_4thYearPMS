@@ -22,7 +22,7 @@ public class Project {
     private String programs;
     private int studentLimit;
 
-    @OneToMany(targetEntity=Student.class, mappedBy="project", fetch=FetchType.LAZY)
+    @OneToMany(cascade={CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH}, targetEntity=Student.class, mappedBy="project", fetch=FetchType.LAZY)
     private List<Student> students;
 
     @ManyToMany(cascade={CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH}, mappedBy = "projects")

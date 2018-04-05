@@ -113,9 +113,40 @@ function dynamicTable(tableId) {
     };
 };
 
+function fetchStudents(callback, append, id) {
+    let students = new Promise((resolve, reject) => {
+        let url = "";
+        if (window.location.hostname.indexOf("localhost") >= 0) {
+            url = 'http://localhost:8080/student/all';
+        } else {
+            url = '/student/all';
+        }
+
+        axios.get(url)
+            .then(function(response) {
+                console.log(response.data);
+                resolve(response.data);
+            })
+            .catch(function(error) {
+                console.error("Error fetching students");
+                console.log(error);
+                reject(error);
+            });
+    }).then(function(result) {
+        callback(result, append, id);
+    });
+
+    return students;
+}
+
 function fetchProjects(callback, append, id) {
     let projects = new Promise((resolve, reject) => {
-        const url = 'http://localhost:8080/project/all';
+        let url = "";
+        if (window.location.hostname.indexOf("localhost") >= 0) {
+            url = 'http://localhost:8080/project/all';
+        } else {
+            url = '/project/all';
+        }
 
         axios.get(url)
             .then(function (response) {
@@ -136,8 +167,12 @@ function fetchProjects(callback, append, id) {
 
 function addProject(data, callback) {
     let addProject = new Promise((resolve, reject) => {
-        const url = `http://localhost:8080/project/add?title=${data.title}&description=${data.description}&programs=${data.programs}&maxStudents=${data.studentLimit}&`;
-
+        let url = "";
+        if (window.location.hostname.indexOf("localhost") >= 0) {
+            url = `http://localhost:8080/project/add?title=${data.title}&description=${data.description}&programs=${data.programs}&maxStudents=${data.studentLimit}&`;
+        } else {
+            url = `/project/add?title=${data.title}&description=${data.description}&programs=${data.programs}&maxStudents=${data.studentLimit}&`;
+        }
         axios.get(url)
             .then(function (response) {
                 resolve(response.data);
@@ -160,7 +195,12 @@ function addProject(data, callback) {
 
 function removeProject(projectId, callback) {
     let removeProject = new Promise((resolve, reject) => {
-        const url = `http://localhost:8080/project/deleteById?id=${projectId}`;
+        let url = "";
+        if (window.location.hostname.indexOf("localhost") >= 0) {
+            url = `http://localhost:8080/project/deleteById?id=${projectId}`;
+        } else {
+            url = `/project/deleteById?id=${projectId}`;
+        }
         axios.get(url)
             .then(function (response) {
                 resolve(response.data);
@@ -199,8 +239,8 @@ $(document).ready(function (e) {
 
     //Table to display student info
     var studentInfo = new dynamicTable('studentTable');
-    studentInfo.config(['s','sn','em','deg'], ['Name','Student Number','Email','Program'], 'There are no items to list...');
-    studentInfo.load(dummyStudents, true, 2);
+    studentInfo.config(['name', 'studentId', 'email', 'program'], ['Name', 'Student Number', 'Email', 'Program'], 'There are no students...');
+    fetchStudents(studentInfo.load, true, 2);
 
 
 
