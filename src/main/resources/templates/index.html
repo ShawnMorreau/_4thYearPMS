@@ -314,6 +314,11 @@
 
         padding: 25px;
     }
+
+    .form-group{
+
+        width: 50%;
+    }
 </style>
 
 <head>
@@ -338,25 +343,28 @@
 
 <div className="container">
     <h1>Create a new projects:</h1>
-    <form id="form" action="#" method="post">
 
-        <label>Title: </label>&nbsp<input id='title' type="text" placeholder="Title..." /><br>
-        <label>Description: </label>&nbsp<textarea id='description' type="text" placeholder="Description..."></textarea>
+    <form id="form" action="#" method="post">
+    <div class="form-group">
+        <label>Title: </label>&nbsp<input class="form-control" id='title' type="text" placeholder="Title..." /><br>
+        <label>Description: </label>&nbsp<textarea class="form-control" id='description' type="text" placeholder="Description..."></textarea>
         <br>
 
         <label>Restricted to: </label>
-        <div class="grid-container" id="programs">
-            <label class="grid-item">SE <input value='SE' name='check' type="checkbox"/></label>
-            <label class="grid-item">EE <input value='EE' name='check' type="checkbox"/></label>
-            <label class="grid-item">Communications <input value='Communications' name='check' type="checkbox"/></label>
-            <label class="grid-item">CSE <input value='CSE' id='CSE' name='check' type="checkbox"/></label>
-            <label class="grid-item">Biomed <input value='Biomed'  name='check' type="checkbox"/></label>
-            <label class="grid-item">Mechanical <input value='Mechanical' name='check' type="checkbox"/></label>
-            <label class="grid-item">Aerospace <input value='Aerospace' name='check' type="checkbox"/></label>
+        <div class="grid-container"  id="programs">
+            <label class="grid-item">SE <input class="form-control" value='SE' name='check' type="checkbox"/></label>
+            <label class="grid-item">EE <input class="form-control" value='EE' name='check' type="checkbox"/></label>
+            <label class="grid-item">Communications <input class="form-control" value='Communications' name='check' type="checkbox"/></label>
+            <label class="grid-item">CSE <input class="form-control" value='CSE' id='CSE' name='check' type="checkbox"/></label>
+            <label class="grid-item">Biomed <input class="form-control"value='Biomed'  name='check' type="checkbox"/></label>
+            <label class="grid-item">Mechanical <input class="form-control" value='Mechanical' name='check' type="checkbox"/></label>
+            <label class="grid-item">Aerospace <input class="form-control" value='Aerospace' name='check' type="checkbox"/></label>
         </div>
         <br>
-        <label>Max # of Students: </label>&nbsp<input id='studentLimit' type="number" placeholder="max # of Students..." /><br>
-        <label>Submit: </label>&nbsp<input id="formSubmit" type="submit" value="Submit" /><br>
+        <label>Max # of Students: </label>&nbsp<input class="form-control" id='studentLimit' type="number" placeholder="max # of Students..." /><br>
+        <label>Submit: </label>&nbsp<input class="form-control" id="formSubmit" type="submit" value="Submit" /><br>
+    </div>
+
     </form>
 
     <div className="container">

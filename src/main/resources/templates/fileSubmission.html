@@ -315,6 +315,9 @@
         padding: 25px;
     }
 
+    .form-group{
+        width: 50%;
+    }
 </style>
 
 
@@ -343,13 +346,14 @@
     File Submission will go here
 
     <form id="fileSumbission"  enctype="multipart/form-data" action="" method="post">
+        <div class="form-group">
         <label>Submit a rough draft</label>
-        <input type="file" id="roughDraft" name="file">
+        <input class="form-control" type="file" id="roughDraft" name="file">
         <br>
         <label>Submit a final report</label>
-        <input type="file" id="finalReport" name="file">
-        <br><input type="submit">
-
+        <input class="form-control"  type="file" id="finalReport" name="file">
+        <br><input class="form-control"  type="submit">
+        </div>
     </form>
 </div>
 
