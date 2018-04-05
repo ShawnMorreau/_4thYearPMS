@@ -422,7 +422,8 @@
     function submitAvailability(studentId) {
         //toDo
         const a = $("#selected").val();
-        saveAvailability(a, 1, alert);
+        saveAvailability(a.replace(/\n/g, ","), 1, alert);
+        document.getElementById("selected").value = "";
     }
 
     function saveAvailability(availability, studentId, callback) {
